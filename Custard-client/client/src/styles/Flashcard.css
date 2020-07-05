@@ -1,0 +1,16 @@
+#flashcard {
+  max-width: 800px;
+}
+.flashcard_header {
+  background-color: rgb(224, 223, 223);
+  color: grey;
+}
+.flash_answer_button {
+  left: 0px;
+  right: 0px;
+}
+.flashcard_button {
+  width: 170px;
+  max-width: 170px;
+  position: absolute;
+}

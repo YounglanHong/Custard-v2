@@ -1,0 +1,62 @@
+#image-editor {
+  width: 1000px;
+  margin: 0 0 0 250px;
+}
+.tui-image-editor-controls-buttons {
+  display: none;
+  opacity: 0;
+}
+
+.tui-image-editor-download-btn {
+  display: none;
+  opacity: 0;
+}
+
+.tui-image-editor-load-btn {
+  opacity: 0;
+  display: none;
+}
+
+/*
+.image-editor div {
+  border: transparent;
+  padding: 0;
+  margin: 0;
+}
+*/
+
+#save-change {
+  margin: 0 3px 0 0;
+  height: 33px;
+}
+
+#detect-change {
+  height: 33px;
+}
+
+#detect-text-filler {
+  margin: 40px 0 20px 0px;
+}
+
+#OCR-tool {
+  margin: 0 0 0 252px;
+}
+
+#select-language {
+  padding: 0px;
+}
+
+#MultipleImageUpload {
+  margin: 5px 0 0 80px;
+}
+
+#OCR-result {
+  /*border: 1px solid grey;
+    padding: 5px;*/
+  width: 600px;
+  margin: 5px 0 0 250px;
+}
+
+textarea:focus {
+  outline: none;
+}

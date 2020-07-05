@@ -1,0 +1,46 @@
+/*
+#add-cardform-container {
+  margin: 0 0 0 250px;
+}
+*/
+
+#add-text-type {
+  margin: 0 0 0 250px;
+}
+
+.json-bumper {
+  margin: 5px;
+}
+
+.filler {
+  padding: 5px;
+}
+
+.filler-json {
+  margin: 5px 0 0 0;
+}
+
+.addQuestion {
+  width: 100%;
+}
+
+.addAnswer {
+  width: 100%;
+}
+
+.addNote {
+  width: 100%;
+}
+
+#add-card-button {
+  margin: 15px 0 0 250px; /*510px;*/
+  background-color: #f0efef;
+}
+
+.add-cardform-button {
+  margin: 12px 0 5px 250px;
+}
+
+#add-cardform-button-json {
+  margin: 50px 0 0px 0px;
+}

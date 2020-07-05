@@ -1,0 +1,202 @@
+.app {
+  padding: 20px 250px 10px 0px;
+  font-family: Lucida Sans Unicode;
+  /*padding: 10px;*/
+  margin: 10px;
+}
+
+.app-content {
+  /*border: 1px solid grey;*/
+  padding-top: 80px;
+}
+
+.logout-logo-container {
+  text-align: center;
+  border: transparent;
+  padding: 0;
+  margin: 0;
+}
+
+.logout-logo {
+  text-align: center;
+}
+
+#login-logo-container {
+  padding: 0;
+  margin: 0;
+  float: left;
+}
+
+.login-logo {
+  width: 200px;
+  height: 80px;
+}
+
+button:focus {
+  outline: none;
+}
+
+.tui-editor-defaultUI {
+  border: 1px solid grey;
+}
+
+.tui-editor-defaultUI div {
+  border: transparent;
+}
+
+.te-toolbar-section div {
+  border: transparent;
+}
+
+/*div.tui-editor-defaultUI,*/
+div.te-toolbar-section,
+div.te-markdown-taab-section,
+div.te-tab,
+div.tui-editor-defaultUI-toobar,
+div.tui-toolbar-divider,
+div.tui-scrollsync,
+div.tui-popup-wrapper,
+div.tui-popup-header,
+div.tui-popup-title,
+div.tui-popup-header-buttons,
+div.tui-popup-body,
+div.tui-editor-defaultUI-toolbar,
+div.te-editor-section,
+div.tui-editor,
+div.te-editor,
+div.te-ww-container,
+div.tui-editor-contents,
+div.te-mode-switch-section,
+div.tui-popup-wrapper,
+div.tui-popup-wrapper,
+div.tui-popup-modal-background div.te- {
+  background-color: transparent;
+  /*border: transparent;*/
+  padding: 0;
+  margin: 0;
+}
+
+/* .tui-text-editor {
+  border: transparent 0px;
+} */
+
+#tui-text-editor {
+  border: transparent;
+}
+
+.sideNav {
+  border: transparent;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  margin-top: 100px;
+  height: 60%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #f0efef; /*??*/ /* #111;*/
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 30px;
+}
+
+.sideNav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sideNav a:hover {
+  color: black; /*#f1f1f1;*/
+}
+
+.sideNav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sideNav {
+    padding-top: 15px;
+  }
+  .sideNav a {
+    font-size: 18px;
+  }
+}
+
+.speedDial {
+  border: transparent;
+}
+
+#SpeedDialopenIconexample-actions {
+  border: transparent;
+}
+
+.hidden {
+  display: none;
+}
+
+input {
+  border: transparent;
+  background-color: white;
+}
+
+.newDeckInput {
+  border: grey solid 1px;
+}
+
+.custom-file-input::-webkit-file-upload-button {
+  display: none;
+  /* visibility: hidden; */
+}
+
+.custom-file-input {
+  float: right;
+  display: block;
+  position: relative;
+  right: 2px;
+  float: left;
+  background-color: transparent;
+}
+
+.custom-file-input:focus {
+  outline: none;
+}
+
+.custom-file-input::before {
+  content: "파일 찾기";
+  display: inline-block;
+  color: grey;
+  background: linear-gradient(top, #f9f9f9, #e3e3e3);
+  border: 1px solid #999;
+  border-radius: 3px;
+  padding: 5px 8px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  font-size: 10pt;
+  width: 60px;
+  float: right;
+}
+
+.upload-button {
+  color: grey;
+  background: white;
+  /*background: linear-gradient(top, #f9f9f9, #e3e3e3); */
+  border: 1px solid #999;
+  border-radius: 3px;
+  padding: 5px 8px;
+  outline: none;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 10pt;
+  /* float: right; */
+}

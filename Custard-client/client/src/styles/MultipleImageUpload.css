@@ -1,0 +1,33 @@
+#custom-file-input-OCR {
+  float: right;
+  display: block;
+  position: relative;
+  right: 2px;
+  float: left;
+}
+
+#custom-file-input-OCR::-webkit-file-upload-button {
+  display: none;
+  /* visibility: hidden; */
+}
+
+#custom-file-input-OCR:focus {
+  outline: none;
+}
+
+#custom-file-input-OCR::before {
+  content: "파일 찾기";
+  display: inline-block;
+  color: grey;
+  background: linear-gradient(top, #f9f9f9, #e3e3e3);
+  border: 1px solid #999;
+  border-radius: 3px;
+  padding: 5px 8px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  font-size: 10pt;
+  width: 60px;
+  float: right;
+}

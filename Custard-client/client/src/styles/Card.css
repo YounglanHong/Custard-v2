@@ -1,0 +1,58 @@
+#card {
+  margin: 0 0 0 250px;
+  max-width: 600px;
+}
+.card_container {
+  /* width: 300px; */
+  margin: 10px;
+  padding: 10px;
+  border-radius: 3px;
+  background-color: rgb(233, 202, 161);
+}
+.card_header {
+  /* border-bottom: 2px solid burlywood; */
+  /* margin: 0px 0px 0px 0px; */
+  padding: 10px 0px 5px 0px;
+  border-top: 2px solid rgb(233, 202, 161);
+  border-bottom: 2px solid rgb(233, 202, 161);
+  /* border-radius: 3px; */
+  /* background-color: rgb(233, 202, 161); */
+}
+.card_title {
+  margin: 2px;
+  padding: 2px;
+  color: #61493c;
+  font-weight: bold;
+}
+.card_study {
+  text-align: right;
+}
+#card_study_button {
+  border-radius: 5px;
+  background-color: #9c694d;
+  color: white;
+  font-weight: bold;
+  text-transform: none;
+  float: top;
+}
+.card_cardtype_button {
+  border-bottom: 1px dotted #6d4129;
+}
+.card_content {
+  /* font-family: "Roboto", sans-serif; */
+  padding: 20px 0px 5px 0px;
+  border-top: 1px dotted #92763a;
+  border-bottom: 1px dotted #fcfbe9;
+  font-weight: bold;
+  color: #94664d;
+}
+.card_cardtype {
+  padding: 10px;
+}
+.card_button {
+  top: 35px;
+  float: right;
+}
+.card_dial {
+  position: sticky;
+}

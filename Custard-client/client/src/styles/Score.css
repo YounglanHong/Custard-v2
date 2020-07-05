@@ -1,0 +1,25 @@
+#score {
+  margin: 0px 0px 0px 250px;
+}
+.score_container {
+  background-color: rgb(252, 251, 245);
+  border: 1px solid lightgray;
+  max-width: 600px;
+  border-radius: 3px;
+}
+.score_header {
+  background-color: lightgray;
+  max-width: 600px;
+  padding: 10px 10px 10px 20px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+.score_marked {
+  background-color: rgb(253, 242, 193);
+  padding: 5px 10px 10px 20px;
+}
+.score_button {
+  padding: 10px 10px 10px 20px;
+  left: 450px;
+  bottom: 10px;
+}

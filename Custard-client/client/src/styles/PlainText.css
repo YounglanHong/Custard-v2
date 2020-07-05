@@ -1,0 +1,33 @@
+.add_card {
+  margin: 0 0 0 250px;
+  border: 1px solid grey;
+  padding: 5px;
+  width: 600px;
+}
+
+.add_card div {
+  border: transparent;
+  padding: 5px;
+  margin: 0px;
+}
+
+.answer-count {
+  float: right;
+  color: grey;
+}
+
+.addQuestion div {
+  margin-right: 10px;
+}
+
+.addAnswer div {
+  margin-right: 10px;
+}
+
+.addNote div {
+  margin-right: 10px;
+}
+
+.MuiInput-underline div {
+  display: none;
+}

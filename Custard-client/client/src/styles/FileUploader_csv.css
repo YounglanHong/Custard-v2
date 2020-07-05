@@ -1,0 +1,29 @@
+#csv-container {
+  margin: 0 0 0 250px;
+  padding: 0 445px 0 0;
+}
+
+.file-uploader-csv div {
+  border: transparent;
+  padding: 0;
+  margin: 0;
+}
+
+.te-toolbar-section div {
+  margin: 0 0 0 20px;
+}
+
+.tui-text-editor div {
+  border: transparent;
+  padding: 0;
+  margin: 0;
+}
+
+#text-editor {
+  border: 1px solid grey;
+}
+
+#generate-card-button {
+  margin: 10px 0 0 0;
+  background-color: #f0efef;
+}

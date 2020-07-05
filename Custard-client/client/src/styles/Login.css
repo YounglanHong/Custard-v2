@@ -1,0 +1,33 @@
+.login {
+  text-align: center;
+}
+
+.login {
+  border: transparent;
+  padding: 0;
+  margin: 0;
+}
+
+.google-logo {
+  width: 20px;
+  height: 20px;
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
+  padding-right: 10px;
+}
+
+#google-login-button {
+  border-radius: 5px;
+  background-color: #e3cf5b;
+  color: white;
+  font-weight: bold;
+  text-transform: none;
+}
+
+#google-login-button:hover {
+  background-color: #4f3222;
+}
+
+.MuiButtonBase-root {
+  color: red;
+}

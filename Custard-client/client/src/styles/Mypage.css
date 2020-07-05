@@ -1,0 +1,38 @@
+/*.mypage div {
+  border: transparent;
+  padding: 0;
+  margin: 0;
+}*/
+
+.mypage {
+  padding: 10px 0 0 0;
+}
+
+.welcome {
+  font-size: 23px;
+  margin: 20px 0 10px 276px;
+  color: grey;
+}
+
+.profile {
+  margin: 0 0 0 250px;
+}
+
+#logout-button {
+  margin: 2px 0 0 281px;
+  width: 125px;
+  border-radius: 5px;
+  background-color: #e3cf5b;
+  color: white;
+  font-weight: bold;
+  text-transform: none;
+}
+
+#logout-button:hover {
+  background-color: #4f3222;
+}
+
+#profile-uploader-container {
+  margin: 0 0 0 105px;
+  padding: 3px;
+}

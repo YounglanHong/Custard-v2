@@ -1,0 +1,12 @@
+#blank {
+  max-width: 800px;
+}
+.blank_header {
+  background-color: rgb(224, 223, 223);
+  color: grey;
+}
+.blank_button {
+  width: 170px;
+  max-width: 170px;
+  position: absolute;
+}
