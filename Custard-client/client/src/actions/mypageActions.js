@@ -21,7 +21,7 @@ export function register(newUser) {
   //TODO: dispatch 없애도!?
   return (dispatch) => {
     axios
-      .post("http://localhost:4000/users/signup", {
+      .post("http://15.165.162.24:4000/users/signup", {
         username: newUser.username,
         email: newUser.email,
         password: newUser.password,
@@ -36,7 +36,7 @@ export function register(newUser) {
 export function login(user) {
   return (dispatch) => {
     axios
-      .post("users/signin", {
+      .post("http://15.165.162.24:4000/users/signin", {
         email: user.email,
         password: user.password,
       })
@@ -61,7 +61,7 @@ export function setLogin() {
 
 export function addProfile(profile) {
   return (dispatch) => {
-    //const url = 'http://localhost:4000/user/profile';
+    //const url = 'http://15.165.162.24:4000/user/profile';
     const formData = new FormData();
     formData.append("image", profile);
     const config = {
@@ -70,7 +70,7 @@ export function addProfile(profile) {
       },
     };
     return axios
-      .post("http://localhost:4000/users/profiles", formData, config)
+      .post("http://15.165.162.24:4000/users/profiles", formData, config)
       .then((res) => {
         console.log(res.data);
         dispatch(updateUserInfo()); //okkkk
@@ -80,6 +80,7 @@ export function addProfile(profile) {
 
 export function updateUserInfo() {
   const token = localStorage.usertoken;
+  console.log(token);
   //const decoded = jwt_decode(token);
   // console.log(decoded, "토큰 정보");
   // this.setState({
@@ -92,7 +93,7 @@ export function updateUserInfo() {
   //   .catch(err => console.log(err));
   return (dispatch) => {
     axios
-      .get("http://localhost:4000/users/profile", {
+      .get("http://15.165.162.24:4000/users/profile", {
         headers: {
           authorization: token,
         },
@@ -126,7 +127,7 @@ export function updateUserInfoInStore(data) {
 export function handleSignOut() {
   return (dispatch) => {
     // dispatch(setTempToken(result));
-    axios.post("http://localhost:4000/users/signout").then(() => {
+    axios.post("http://15.165.162.24:4000/users/signout").then(() => {
       dispatch(signOutInStore());
     });
   };
@@ -140,7 +141,7 @@ export function signOutInStore() {
 
 // export function addCustomer(file) {
 //   return () => {
-//     const url = "http://localhost:4000/user/profile";
+//     const url = "http://15.165.162.24:4000/user/profile";
 //     const formData = new FormData();
 //     formData.append("image", file);
 //     const config = {

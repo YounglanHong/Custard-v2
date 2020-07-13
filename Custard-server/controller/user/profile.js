@@ -5,19 +5,18 @@ const jwt = require("jsonwebtoken");
 
 module.exports = {
   get: (req, res) => {
-    
-    console.log(req.cookies, "쿠키를 찾아라~")
+    console.log(req.cookies, "쿠키를 찾아라~");
     const token = req.headers["authorization"];
-    console.log(token, "내 소듕한 토큰값 ")
+    console.log(token, "내 소듕한 토큰값 ");
     if (!token) {
       res.send("no token");
     } else {
       // 토큰 확인
-     // let token = req.cookies.userId;
+      // let token = req.cookies.userId;
 
       // let token = req.localStorage.getItem('userId');
 
-      //console.log(token);
+      // console.log(token);
       var decode = jwt.verify(token, "custard");
       // console.log(decode);
 
@@ -25,10 +24,10 @@ module.exports = {
 
       User.findOne({
         where: {
-          id: decode.id
-        }
+          id: decode.id,
+        },
       })
-        .then(data => {
+        .then((data) => {
           // console.log(data);
           if (!data) {
             res.status(401).send("invalid user"); // 등록되지 않은 회원
@@ -36,11 +35,11 @@ module.exports = {
             res.status(200).json(data.dataValues);
           }
         })
-        .catch(err => {
+        .catch((err) => {
           res.sendStatus(500);
         });
     }
-  }
+  },
   // get: (req, res) => {
   //   // 이메일로 찾는다.
   //   User.findOne({

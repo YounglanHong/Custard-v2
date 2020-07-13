@@ -16,7 +16,7 @@ export const HINTED_SCORE = "HINTED_SCORE";
 export function getDeckCards(/*card*/) {
   return dispatch => {
     axios
-      .get("http://localhost:4000/card/cardInfo")
+      .get("http://15.165.162.24:4000/card/cardInfo")
       .then(res => {
         //console.log(res.data);
         dispatch(showCard(res.data));
@@ -81,7 +81,7 @@ export function addCard(/*cardType, */ category, deckId, validAddCardForm) {
   console.log(validAddCardForm);
   const promises = validAddCardForm.map(cardForm =>
     axios
-      .post("http://localhost:4000/card/cardInfo", {
+      .post("http://15.165.162.24:4000/card/cardInfo", {
         deck_id: cardForm.deckId,
         cardtype: cardForm.cardType,
         question: cardForm.question,
@@ -123,7 +123,7 @@ export function editCardInServer(
   // return dispatch => {
   return dispatch => {
     axios
-      .patch("http://localhost:4000/card/up-card ", {
+      .patch("http://15.165.162.24:4000/card/up-card ", {
         // data: {
         id: cardId,
         cardtype: cardtype,
@@ -147,7 +147,7 @@ export function editCardInServer(
 export function editCard(cardId) {
   return dispatch => {
     axios
-      .post("http://localhost:4000/card/up-card", {
+      .post("http://15.165.162.24:4000/card/up-card", {
         id: cardId
       })
       .then(res => {
@@ -206,7 +206,7 @@ export function deleteCard(cardId) {
   console.log(typeof cardId);
   return dispatch => {
     axios
-      .delete("http://localhost:4000/card/up-card ", {
+      .delete("http://15.165.162.24:4000/card/up-card ", {
         data: { id: cardId }
       })
       .then(res => {
@@ -242,7 +242,7 @@ export function handleCorrectInServer(cardId) {
   console.log(cardId);
   return dispatch => {
     axios
-      .patch("http://localhost:4000/card/correct", {
+      .patch("http://15.165.162.24:4000/card/correct", {
         id: cardId
       })
       .then(res => {
@@ -258,7 +258,7 @@ export function handleCorrectScore(cardId) {
   console.log(cardId);
   return dispatch => {
     axios
-      .post("http://localhost:4000/card/correct", {
+      .post("http://15.165.162.24:4000/card/correct", {
         id: cardId
       })
       .then(res => {
@@ -287,7 +287,7 @@ export function handleWrongInServer(cardId) {
   console.log(cardId);
   return dispatch => {
     axios
-      .patch("http://localhost:4000/card/wrong", {
+      .patch("http://15.165.162.24:4000/card/wrong", {
         id: cardId
       })
       .then(res => {
@@ -303,7 +303,7 @@ export function handleWrongScore(cardId) {
   console.log(cardId);
   return dispatch => {
     axios
-      .post("http://localhost:4000/card/wrong", {
+      .post("http://15.165.162.24:4000/card/wrong", {
         id: cardId
       })
       .then(res => {
@@ -326,7 +326,7 @@ export function handleMarkedInServer(cardId) {
   console.log(cardId);
   return dispatch => {
     axios
-      .patch("http://localhost:4000/card/marked", {
+      .patch("http://15.165.162.24:4000/card/marked", {
         id: cardId
       })
       .then(res => {
@@ -342,7 +342,7 @@ export function handleMarkedPost(cardId) {
   console.log(cardId);
   return dispatch => {
     axios
-      .post("http://localhost:4000/card/marked", {
+      .post("http://15.165.162.24:4000/card/marked", {
         id: cardId
       })
       .then(res => {
@@ -358,7 +358,7 @@ export function handleHintedInServer(cardId) {
   console.log(cardId);
   return dispatch => {
     axios
-      .patch("http://localhost:4000/card/hinted", {
+      .patch("http://15.165.162.24:4000/card/hinted", {
         id: cardId
       })
       .then(res => {
@@ -374,7 +374,7 @@ export function handleHintedPost(cardId) {
   console.log(cardId);
   return dispatch => {
     axios
-      .post("http://localhost:4000/card/hinted", {
+      .post("http://15.165.162.24:4000/card/hinted", {
         id: cardId
       })
       .then(res => {

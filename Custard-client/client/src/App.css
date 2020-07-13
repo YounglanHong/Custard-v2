@@ -102,9 +102,9 @@ div.tui-popup-modal-background div.te- {
 }
 
 .sideNav a {
-  padding: 8px 8px 8px 32px;
+  padding: 20px 10px 10px 30px;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 30px;
   color: #818181;
   display: block;
   transition: 0.3s;
@@ -120,6 +120,11 @@ div.tui-popup-modal-background div.te- {
   right: 25px;
   font-size: 36px;
   margin-left: 50px;
+}
+
+.navLink {
+  /* font-family: "Baloo Da 2", cursive;*/
+  font-family: "Markazi Text", serif;
 }
 
 @media screen and (max-height: 450px) {

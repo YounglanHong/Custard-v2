@@ -22,7 +22,7 @@ export const DISACTIVATE_CATE_INPUT = "DISACTIVATE_CATE_INPUT";
 export function updateUserDecks(/*userId*/) {
   return dispatch => {
     axios
-      .get("http://localhost:4000/deck/infoCate")
+      .get("http://15.165.162.24:4000/deck/infoCate")
       .then(res => {
         console.log(res);
         dispatch(updateUserDecksToStore(res.data));
@@ -46,7 +46,7 @@ export function updateUserDecksToStore(category) {
 export function addCategory(userId, category) {
   return dispatch => {
     axios
-      .post("http://localhost:4000/deck/infoCate", {
+      .post("http://15.165.162.24:4000/deck/infoCate", {
         user_id: userId,
         category: category
       })
@@ -71,7 +71,7 @@ export function addCategoryInStore(cate) {
 export function editCateInServer(cateId, category) {
   return dispatch => {
     axios
-      .patch("http://localhost:4000/deck/infoCate", {
+      .patch("http://15.165.162.24:4000/deck/infoCate", {
         id: cateId,
         category: category
       })
@@ -88,7 +88,7 @@ export function editCateInServer(cateId, category) {
 export function editCateTitle(cateId) {
   return dispatch => {
     axios
-      .post("http://localhost:4000/deck/cate", {
+      .post("http://15.165.162.24:4000/deck/cate", {
         id: cateId
       })
       .then(res => {
@@ -105,7 +105,7 @@ export function editCateTitle(cateId) {
 export function deleteCategory(cateId) {
   return dispatch => {
     axios
-      .delete("http://localhost:4000/deck/infoCate", {
+      .delete("http://15.165.162.24:4000/deck/infoCate", {
         data: { id: cateId }
       })
       .then(res => {
@@ -159,7 +159,7 @@ export function activateInput() {
 // return (dispatch) => {
 //   console.log(dispatch)
 //   axios
-//     .post('http://localhost:4000/deck/addDeck')
+//     .post('http://15.165.162.24:4000/deck/addDeck')
 //     .then((res) => {
 //       console.log(res);
 //         dispatch( addDeck());
@@ -173,14 +173,14 @@ export function activateInput() {
 //****************** 카테고리 서버 변경사항 추가 ****************/
 //TODO: deck 생성
 //? category => cateId
-//http://localhost:4000/deck/infoDeck
+//http://15.165.162.24:4000/deck/infoDeck
 export function addDeck(userId, cateId, newDeckTitle) {
   console.log(userId);
   console.log(cateId);
   console.log(newDeckTitle);
   return dispatch => {
     axios
-      .post("http://localhost:4000/deck/infoDeck", {
+      .post("http://15.165.162.24:4000/deck/infoDeck", {
         user_id: userId,
         category_id: cateId,
         title: newDeckTitle
@@ -216,7 +216,7 @@ export function deleteCategoryinServer() {
   console.log('getting user info...');
   return (dispatch) => {
     axios
-      .post('http://localhost:4000/user/info')
+      .post('http://15.165.162.24:4000/user/info')
       .then((res) => {
         if (res.data === 'no') {
           dispatch(forceLogOut());
@@ -238,7 +238,7 @@ export function deleteCategoryinServer() {
 // !현재상태 디비에 저장까지 됨// 화면에 적용됨// 저장은 안됨(휘발성)
 // export function addCategory(category) {
 //   axios
-//     .post("http://localhost:4000/deck/addCate", {
+//     .post("http://15.165.162.24:4000/deck/addCate", {
 //       category: category
 //     })
 //     .then(data => {
@@ -254,7 +254,7 @@ export function deleteCategoryinServer() {
 // return (dispatch) => {
 
 //   console.log(dispatch)
-//   axios.post('http://localhost:4000/deck/addDeck',{
+//   axios.post('http://15.165.162.24:4000/deck/addDeck',{
 //        category: category
 //   }).then((res) => {
 //       console.log(res);
@@ -323,7 +323,7 @@ export function editDeckTitle(i, j, newTitle) {
 export function editDeckInServer(deckId, deckTitle) {
   return dispatch => {
     axios
-      .patch("http://localhost:4000/deck/deck", {
+      .patch("http://15.165.162.24:4000/deck/deck", {
         id: deckId,
         title: deckTitle
       })
@@ -345,7 +345,7 @@ export function editDeckInServer(deckId, deckTitle) {
 //   console.log(typeof category);
 //   return (dispatch) => {
 //     axios
-//       .delete("http://localhost:4000/deck/cate", {
+//       .delete("http://15.165.162.24:4000/deck/cate", {
 //         data: { category: category },
 //       })
 //       .then((res) => {
@@ -358,7 +358,7 @@ export function editDeckInServer(deckId, deckTitle) {
 //   };
 // }
 
-// //http://localhost:4000/deck/cate
+// //http://15.165.162.24:4000/deck/cate
 // // {"category": "English"
 // // }
 
@@ -375,7 +375,7 @@ export function editDeckInServer(deckId, deckTitle) {
 export function deleteDeck(category, deckId) {
   return dispatch => {
     axios
-      .delete("http://localhost:4000/deck/deck", {
+      .delete("http://15.165.162.24:4000/deck/deck", {
         data: {
           id: deckId
         }

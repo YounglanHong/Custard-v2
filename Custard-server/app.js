@@ -39,6 +39,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:3000",
+      "http://15.165.162.24:3000",
       "http://custard.s3-website.ap-northeast-2.amazonaws.com",
     ],
     methods: ["GET", "POST", "PATCH", "DELETE"],

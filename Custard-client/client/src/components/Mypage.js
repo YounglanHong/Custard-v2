@@ -79,7 +79,7 @@ export default class Mypage extends Component {
     //!  FormData 인터페이스의 append() 메서드는 FormData 객체의 기존 키에 새 값을 추가하거나, 키가 없는 경우 키를 추가합니다.
     //? MDN  https://developer.mozilla.org/ko/docs/Web/API/FormData/append
 
-    const url = "localhost:4000/users/profiles";
+    const url = "15.165.162.24:4000/users/profiles";
     const formData = new FormData();
     formData.append("image", this.state.fileObj);
     formData.append("email", this.props.mypage.email);
@@ -105,13 +105,13 @@ export default class Mypage extends Component {
     //console.log(this.state.fileName);
 
     const { mypage } = this.props;
-    //let profileImg = `http://localhost:4000${this.props.mypage.image}`;
+    //let profileImg = `http://15.165.162.24:4000${this.props.mypage.image}`;
     return (
       <div className="mypage">
         <div className="welcome">Hello, {this.props.mypage.username}!</div>
         <div className="profile">
           <img
-            src={`http://localhost:4000${image}`}
+            src={`http://15.165.162.24:4000${image}`}
             alt="profile"
             style={{
               width: 180,
@@ -138,7 +138,7 @@ export default class Mypage extends Component {
         {/* <div>username: {this.props.username}</div> */}
         {/* <div>user rank</div> */}
         <GoogleLogout
-          clientId={GOOGLE_CLIENT_ID}
+          clientId="FIX_ME"
           buttonText="Logout"
           onLogoutSuccess={this.handleGoogleLogout}
           render={(renderProps) => (

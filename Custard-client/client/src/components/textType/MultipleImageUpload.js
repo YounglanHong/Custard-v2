@@ -38,7 +38,7 @@ export default class MultipleImageUpload extends Component {
                     this.props.selectFile(i, e);
                   }}
                   style={{ width: 100, heigth: 100 }}
-                  src={url} //<img src="blob:http://localhost:3000/3c9d9cbd-7efb-4454-86ae-6323f70e79e9" alt="..." style="width: 100px;">
+                  src={url} //<img src="blob:http://15.165.162.24:3000/3c9d9cbd-7efb-4454-86ae-6323f70e79e9" alt="..." style="width: 100px;">
                   alt="..."
                 />
               </span>

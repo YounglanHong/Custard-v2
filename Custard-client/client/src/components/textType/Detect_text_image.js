@@ -233,7 +233,7 @@ class Detect_text_image extends Component {
     //console.log(this.state.fileObj);
     // console.log(this.state.fileObj);
     // console.log(this.state.fileArray);
-    //["blob:http://localhost:3000/a8984720-e245-4473-97ad-a729f87302a6", {...s}]
+    //["blob:http://15.165.162.24:3000/a8984720-e245-4473-97ad-a729f87302a6", {...s}]
     return (
       <div>
         <div>
@@ -371,7 +371,7 @@ export default Detect_text_image;
 //       }
 //     };
 //     // axios
-//     //   .post("http://localhost:4000/card/cardInfo", formData, config)
+//     //   .post("http://15.165.162.24:4000/card/cardInfo", formData, config)
 //     //   .then(response => {
 //     //     alert("The file is successfully uploaded");
 //     //   })

@@ -47,7 +47,7 @@ export default class Signup extends Component {
   //* 이메일 체크 하는 메서드
 
   checkedEmail = debounce(async (email) => {
-    const response = await axios.get("http://localhost:4000/users/signup");
+    const response = await axios.get("http://15.165.162.24:4000/users/signup");
 
     const users = response.data;
     const isUserFound = users.filter(
@@ -126,7 +126,7 @@ export default class Signup extends Component {
     //   this.props.history.push(`/login`);
     // });
     return axios
-      .post("http://localhost:4000/users/signup", {
+      .post("http://15.165.162.24:4000/users/signup", {
         username: newUser.username,
         email: newUser.email,
         //password: newUser.password

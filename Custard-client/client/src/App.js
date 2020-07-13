@@ -16,9 +16,10 @@ import { updateUserInfo } from "./actions/mypageActions";
 
 import custard_logo_no from "./custard_logo_no.png";
 import custard_logo_noo from "./custard_logo_noo.png";
+// import Login from "./components/Login";
 
 class App extends Component {
-  state = { sideNav: false };
+  state = { sideNav: false, openModal: false };
   //material-ui Drawer 사용해도 됨
   handleMouseEnter() {
     this.setState({
@@ -28,6 +29,18 @@ class App extends Component {
   handleMouseLeave() {
     this.setState({
       sideNav: false,
+    });
+  }
+
+  handleOpen() {
+    this.setState({
+      openModal: true,
+    });
+  }
+
+  handleClose() {
+    this.setState({
+      openModal: false,
     });
   }
 
@@ -63,10 +76,22 @@ class App extends Component {
             className="sideNav"
             onMouseEnter={this.handleMouseEnter.bind(this)}
             onMouseLeave={this.handleMouseLeave.bind(this)}
-            style={this.state.sideNav ? { width: 250 } : { width: 30 }}
+            style={this.state.sideNav ? { width: 250 } : { width: 20 }}
           >
-            <Link to="/mypage">Mypage</Link>
-            <Link to="/decks">Decks</Link>
+            <div className="navLink">
+              <Link
+                to="/mypage"
+                style={!isLogin ? { pointerEvents: "none" } : {}}
+              >
+                Mypage
+              </Link>
+              <Link
+                to="/decks"
+                style={!isLogin ? { pointerEvents: "none" } : {}}
+              >
+                Decks
+              </Link>
+            </div>
           </div>
           <div className="app-content">
             <Switch>
@@ -77,11 +102,10 @@ class App extends Component {
                   if (isLogin) {
                     return <Redirect to="/mypage" />;
                   } else {
-                    return <Redirect to="/login" />;
+                    return <Redirect to="/mypage" />;
                   }
                 }}
               />
-              {/* <Route exact path="/" component={Landing} /> */}
               <Route
                 exact
                 path="/login"
@@ -90,7 +114,7 @@ class App extends Component {
                   if (isLogin) {
                     return <Redirect to="/mypage" />;
                   } else {
-                    return <LoginRoot />;
+                    return <Redirect to="/mypage" />;
                   }
                 }}
               />
@@ -101,7 +125,7 @@ class App extends Component {
                   if (isLogin) {
                     return <AllDeckList />;
                   } else {
-                    return <Redirect to="/login" />;
+                    return <Redirect to="/mypage" />;
                   }
                 }}
               />
@@ -124,7 +148,7 @@ class App extends Component {
                   if (isLogin) {
                     return <MypageRoot />;
                   } else {
-                    return <Redirect to="/login" />;
+                    return <MypageRoot />;
                   }
                 }}
               />
@@ -138,7 +162,7 @@ class App extends Component {
                   if (isLogin) {
                     return <Deck />;
                   } else {
-                    return <Redirect to="/login" />;
+                    return <Deck />;
                   }
                 }}
               />
@@ -150,7 +174,7 @@ class App extends Component {
                   if (isLogin) {
                     return <AddCard />;
                   } else {
-                    return <Redirect to="/login" />;
+                    return <AddCard />;
                   }
                 }}
               />
@@ -162,7 +186,7 @@ class App extends Component {
                   if (isLogin) {
                     return <Study />;
                   } else {
-                    return <Redirect to="/login" />;
+                    return <Study />;
                   }
                 }}
               />
@@ -174,7 +198,7 @@ class App extends Component {
                   if (isLogin) {
                     return <Score />;
                   } else {
-                    return <Redirect to="/login" />;
+                    return <Score />;
                   }
                 }}
               />

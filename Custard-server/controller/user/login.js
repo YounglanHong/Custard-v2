@@ -14,17 +14,17 @@ module.exports = {
     // 구글 토큰이 유효한지 확인 한다.
     axios
       .get(`https://oauth2.googleapis.com/tokeninfo?id_token=${googleIdToken}`)
-      .then(response => {
+      .then((response) => {
         console.log("구글에 요청을 보내고 응답을 받음");
         if (response.status === 200) {
           // 구글토큰으로 이메일을 교환하고 교환한 이메일로 사용자 DB를 확인한다.
           clientEmail = response.data.email;
           User.findOne({
             where: {
-              email: clientEmail
-            }
+              email: clientEmail,
+            },
           })
-            .then(data => {
+            .then((data) => {
               console.log(`DB data: ${data}`);
               if (!data) {
                 res.status(202).send("you need to signup"); // 가입되지 않은 회원
@@ -32,11 +32,11 @@ module.exports = {
                 var token = jwt.sign({ id: data.dataValues.id }, "custard", {
                   expiresIn: "1d",
                   subject: "checkLogin",
-                  issuer: "custard server"
+                  issuer: "custard server",
                 });
 
                 res.send(token);
-               // res.cookie("userId", token);
+                // res.cookie("userId", token);
                 // console.log(res.cookie.userId);
                 // localStorage.setItem('userId', token);
 
@@ -45,19 +45,19 @@ module.exports = {
                 res.status(200).json({
                   email: data.dataValues.email,
                   username: data.dataValues.username,
-                  image: data.dataValues.image
+                  image: data.dataValues.image,
                   // score: data.dataValues.score,
                   // nickname: data.dataValues.nickname,
                   // profileImg: data.dataValues.profileImg,
                 });
               }
             })
-            .catch(err => {
+            .catch((err) => {
               res.send(404).send(err);
             });
         }
       });
-  }
+  },
 };
 // const { User } = require("../../models");
 // const bcrypt = require("bcrypt");
