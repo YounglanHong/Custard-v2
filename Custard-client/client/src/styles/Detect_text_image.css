@@ -47,7 +47,8 @@
 }
 
 #MultipleImageUpload {
-  margin: 5px 0 0 80px;
+  margin: 5px 0 10px 276px;
+  /* margin: 5px 0 0 80px; */
 }
 
 #OCR-result {

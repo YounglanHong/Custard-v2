@@ -18,9 +18,9 @@
 
 #google-login-button {
   border-radius: 5px;
-  background-color: rgb(167, 167, 167); /* #e3cf5b */
+  background-color: rgb(180, 180, 180); /* #e3cf5b */
   color: white;
-  /* font-family: "Open Sans", sans-serif; */
+  font-family: "Open Sans", sans-serif;
   font-size: 11pt;
   font-weight: bold;
   text-transform: none;

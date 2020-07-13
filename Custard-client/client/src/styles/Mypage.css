@@ -9,23 +9,37 @@
 }
 
 .welcome {
+  font-family: "Arvo", serif;
   font-size: 23px;
-  margin: 20px 0 10px 276px;
-  color: grey;
+  margin: 20px 0 30px 276px;
+  color: rgb(87, 87, 87);
 }
 
 .profile {
-  margin: 0 0 0 250px;
+  margin: 20px 0 10px 276px;
 }
 
 #logout-button {
-  margin: 2px 0 0 281px;
+  margin: 20px 0 0 300px;
   width: 125px;
   border-radius: 5px;
-  background-color: #e3cf5b;
+  background-color: rgb(180, 180, 180);
   color: white;
+  font-family: "Open Sans", sans-serif;
   font-weight: bold;
   text-transform: none;
+}
+
+.custom-file-input {
+  /* width: 60px; */
+  font-family: "Open Sans", sans-serif;
+  background-color: #e3cf5b;
+}
+
+.upload-button {
+  /* width: 60px; */
+  font-family: "Open Sans", sans-serif;
+  background-color: #e3cf5b;
 }
 
 #logout-button:hover {

@@ -105,13 +105,17 @@ export default class Mypage extends Component {
     //console.log(this.state.fileName);
 
     const { mypage } = this.props;
+    //* google login 할 때 localStorage에 저장한 프로필 사진 가져오기
+    let profImg = localStorage.getItem("profImg");
+
     //let profileImg = `http://15.165.162.24:4000${this.props.mypage.image}`;
     return (
       <div className="mypage">
-        <div className="welcome">Hello, {this.props.mypage.username}!</div>
+        <div className="welcome">Hello, {mypage.username}!</div>
         <div className="profile">
           <img
-            src={`http://15.165.162.24:4000${image}`}
+            src={profImg}
+            // src={`http://15.165.162.24:4000${image}`}
             alt="profile"
             style={{
               width: 180,
@@ -120,23 +124,19 @@ export default class Mypage extends Component {
             }}
           />
         </div>
-        <form onSubmit={this.handleFormSubmit}>
+        {/* <form onSubmit={this.handleFormSubmit}>
           <div id="profile-uploader-container">
             <input
               className="custom-file-input"
               type="file"
               name="file"
-              file={this.state.file}
+              file={this.state.fileObj}
               onChange={this.handleFileChange.bind(this)}
             />
-            <button className="upload-button" type="submit">
-              저장
-            </button>
+            <Button className="upload-button">Save</Button>
           </div>
-        </form>
+        </form> */}
 
-        {/* <div>username: {this.props.username}</div> */}
-        {/* <div>user rank</div> */}
         <GoogleLogout
           clientId="FIX_ME"
           buttonText="Logout"

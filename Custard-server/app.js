@@ -117,6 +117,7 @@ app.post("/users/profiles", (req, res) => {
 //* 이 부분은 유저 id 값에 따라 디비에 저장된 이미지를 바꾸는 부분입니다.
 //todo: 이미지와 user테이블의 id값을 받아서 맞는게 있으면 이미지가 업데이트 됩니다.
 //todo: 업데이트된 이미지는 클라이언트에서 componentDidMount 에서 자동적으로 post요청이 가서 업데이트 된 데이터를 전송받습니다.
+
 app.patch("/users/profiles", upload.single("image"), (req, res) => {
   console.log(req.body, "들어오는 데이터 app-patch요청");
   let sql = `UPDATE user SET image = ? where email = ?`;

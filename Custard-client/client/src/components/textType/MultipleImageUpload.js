@@ -14,7 +14,8 @@ export default class MultipleImageUpload extends Component {
             <div className="form-group">
               <input
                 type="file"
-                className="custom-file-input form-control"
+                // className="custom-file-input form-control"
+                className="custom-file-input-OCR form-control"
                 onChange={this.props.uploadMultipleFiles}
                 multiple
               />

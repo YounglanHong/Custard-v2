@@ -1,6 +1,8 @@
 .app {
   padding: 20px 250px 10px 0px;
-  font-family: Lucida Sans Unicode;
+  /* font-family: Lucida Sans Unicode; */
+  font-family: "Open Sans", sans-serif;
+  /* font-family: "Roboto", sans-serif; */
   /*padding: 10px;*/
   margin: 10px;
 }
@@ -95,7 +97,7 @@ div.tui-popup-modal-background div.te- {
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #f0efef; /*??*/ /* #111;*/
+  background-color: #f0efef;
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 30px;
@@ -104,14 +106,14 @@ div.tui-popup-modal-background div.te- {
 .sideNav a {
   padding: 20px 10px 10px 30px;
   text-decoration: none;
-  font-size: 30px;
+  font-size: 25px;
   color: #818181;
   display: block;
   transition: 0.3s;
 }
 
 .sideNav a:hover {
-  color: black; /*#f1f1f1;*/
+  color: rgb(34, 34, 34); /*#f1f1f1;*/
 }
 
 .sideNav .closebtn {
@@ -124,7 +126,8 @@ div.tui-popup-modal-background div.te- {
 
 .navLink {
   /* font-family: "Baloo Da 2", cursive;*/
-  font-family: "Markazi Text", serif;
+  /* font-family: "Markazi Text", serif; */
+  font-family: "Arvo", serif;
 }
 
 @media screen and (max-height: 450px) {
@@ -163,11 +166,11 @@ input {
 }
 
 .custom-file-input {
-  float: right;
+  /* float: right; */
   display: block;
   position: relative;
-  right: 2px;
-  float: left;
+  /* right: 276px; */
+  /* float: left; */
   background-color: transparent;
 }
 
@@ -179,7 +182,7 @@ input {
   content: "파일 찾기";
   display: inline-block;
   color: grey;
-  background: linear-gradient(top, #f9f9f9, #e3e3e3);
+  background: linear-gradient(to bottom, #f9f9f9, #e3e3e3);
   border: 1px solid #999;
   border-radius: 3px;
   padding: 5px 8px;
@@ -188,8 +191,7 @@ input {
   -webkit-user-select: none;
   cursor: pointer;
   font-size: 10pt;
-  width: 60px;
-  float: right;
+  /* float: right; */
 }
 
 .upload-button {

@@ -45,7 +45,10 @@ class Login extends Component {
             </Button>
           )}
           onSuccess={function (result) {
-            console.log(result);
+            // console.log(result);
+            //* google login 할 때 localStorage에 프로필 사진 저장
+            localStorage.setItem("profImg", result.profileObj.imageUrl);
+            // console.log(result.profileObj.imageUrl);
             console.log(result.tokenObj["id_token"]);
             this.props.setTempToken(result.tokenObj["id_token"]);
             axios

@@ -33,6 +33,7 @@
   color: white;
   font-weight: bold;
   text-transform: none;
+  text-decoration: none;
   float: top;
 }
 .card_cardtype_button {
