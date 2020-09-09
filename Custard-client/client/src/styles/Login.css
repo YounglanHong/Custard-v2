@@ -1,35 +1,19 @@
 .login {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0 0 0;
 }
 
-.login {
-  border: transparent;
-  padding: 0;
-  margin: 0;
+.anonymous {
+  width: 100px;
+  height: px;
 }
 
-.google-logo {
-  width: 20px;
-  height: 20px;
-  -webkit-filter: invert(100%);
-  filter: invert(100%);
-  padding-right: 10px;
-}
-
-#google-login-button {
-  border-radius: 5px;
-  background-color: rgb(180, 180, 180); /* #e3cf5b */
+.notice {
+  font-size: 14pt;
   color: white;
-  font-family: "Open Sans", sans-serif;
-  font-size: 11pt;
-  font-weight: bold;
-  text-transform: none;
-}
-
-#google-login-button:hover {
-  background-color: #4f3222;
-}
-
-.MuiButtonBase-root {
-  color: red;
+  background-color: #d4855b;
+  padding: 1px 3px 1px 3px;
 }

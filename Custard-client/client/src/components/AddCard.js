@@ -91,7 +91,7 @@ export default class AddCard extends React.Component {
 
   //* (Ctrl + Shift + s clicked 클릭 시) 자동 마크업
   handleAnswerInputKeyUp(i, e) {
-    if (e.ctrlKey && e.shiftKey && e.which == 83) {
+    if (e.ctrlKey && e.shiftKey && e.which === 83) {
       console.log("Ctrl + Shift + s clicked");
       const wholeText = e.target.value;
       const selectedText = document.getSelection().toString();
@@ -204,11 +204,11 @@ export default class AddCard extends React.Component {
       console.log(tableArr[i][0]); // ["question", "answer", "note"], ["answer", "question"]
       for (let j = 0; j < tableArr[i][0].length; j++) {
         console.log([i][0][j]);
-        if (tableArr[i][0][j] == "answer") {
+        if (tableArr[i][0][j] === "answer") {
           answerColIdx = j;
-        } else if (tableArr[i][0][j] == "question") {
+        } else if (tableArr[i][0][j] === "question") {
           questionColIdx = j;
-        } else if (tableArr[i][0][j] == "note") {
+        } else if (tableArr[i][0][j] === "note") {
           noteColIdx = j;
         }
       }

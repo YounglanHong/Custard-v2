@@ -64,6 +64,7 @@ export default class FileUploader_csv extends React.Component {
 
     reader.readAsText(file);
     let processedContents = contents;
+    console.log(processedContents);
     // console.log(file.name.split("."));
     // console.log(file.name.split(".")[1].toLowerCase());
     // console.log(file.name.split(".")[1].toLowerCase() == "csv");

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link, Switch, Redirect } from "react-router-dom";
-import { BrowserRouter, Route } from "react-router-dom";
+import { Route } from "react-router-dom";
 import { connect } from "react-redux";
 import "./App.css";
 import MypageRoot from "./components/root/MypageRoot";
@@ -14,13 +14,21 @@ import Score from "./containers/Score";
 
 import { updateUserInfo } from "./actions/mypageActions";
 
-import custard_logo_no from "./custard_logo_no.png";
-import custard_logo_noo from "./custard_logo_noo.png";
-// import Login from "./components/Login";
+import custard_logo_no from "./images/custard_logo_no.png";
+import custard_logo_noo from "./images/custard_logo_noo.png";
 
 class App extends Component {
-  state = { sideNav: false, openModal: false };
-  //material-ui Drawer 사용해도 됨
+  constructor(props) {
+    super(props);
+    this.state = {
+      sideNav: false,
+      openModal: false,
+      isLogin: false,
+    };
+    this.handleLogin = this.handleLogin.bind(this);
+    this.handleSignout = this.handleSignout.bind(this);
+  }
+
   handleMouseEnter() {
     this.setState({
       sideNav: true,
@@ -48,11 +56,22 @@ class App extends Component {
     this.props.updateUserInfo();
   }
 
+  handleLogin() {
+    this.setState({ isLogin: true });
+  }
+
+  handleSignout() {
+    this.setState({ isLogin: false });
+  }
+
   render() {
-    const { isLogin } = this.props;
-    //console.log(isLogin);
+    // const { isLogin } = this.props;
+    const { isLogin } = this.state;
+    const { handleLogin, handleSignout } = this;
+
     return (
       <div>
+        {/* 로그인 상태에 따라 로고 이미지 변화 */}
         <div id="login-logo-container">
           <img
             alt="login-logo"
@@ -102,22 +121,19 @@ class App extends Component {
                   if (isLogin) {
                     return <Redirect to="/mypage" />;
                   } else {
-                    return <Redirect to="/mypage" />;
+                    return <Redirect to="/login" />;
                   }
                 }}
               />
               <Route
                 exact
                 path="/login"
-                component={LoginRoot}
-                render={() => {
-                  if (isLogin) {
-                    return <Redirect to="/mypage" />;
-                  } else {
-                    return <Redirect to="/mypage" />;
-                  }
-                }}
+                // component={LoginRoot}
+                render={() => (
+                  <LoginRoot isLogin={isLogin} handleLogin={handleLogin} />
+                )}
               />
+
               <Route
                 exact
                 path="/decks"
@@ -143,12 +159,18 @@ class App extends Component {
               <Route
                 exact
                 path="/mypage"
-                component={MypageRoot}
                 render={() => {
                   if (isLogin) {
-                    return <MypageRoot />;
+                    return (
+                      <MypageRoot
+                        isLogin={isLogin}
+                        handleSignout={handleSignout}
+                      />
+                    );
                   } else {
-                    return <MypageRoot />;
+                    return (
+                      <LoginRoot isLogin={isLogin} handleLogin={handleLogin} />
+                    );
                   }
                 }}
               />

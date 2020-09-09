@@ -1,52 +1,22 @@
-/*.mypage div {
-  border: transparent;
-  padding: 0;
-  margin: 0;
-}*/
-
 .mypage {
-  padding: 10px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 0 0 0px;
 }
 
 .welcome {
   font-family: "Arvo", serif;
   font-size: 23px;
-  margin: 20px 0 30px 276px;
   color: rgb(87, 87, 87);
 }
 
 .profile {
-  margin: 20px 0 10px 276px;
+  width: 180;
+  height: 180;
 }
 
-#logout-button {
-  margin: 20px 0 0 300px;
-  width: 125px;
-  border-radius: 5px;
-  background-color: rgb(180, 180, 180);
-  color: white;
-  font-family: "Open Sans", sans-serif;
-  font-weight: bold;
-  text-transform: none;
-}
-
-.custom-file-input {
-  /* width: 60px; */
-  font-family: "Open Sans", sans-serif;
-  background-color: #e3cf5b;
-}
-
-.upload-button {
-  /* width: 60px; */
-  font-family: "Open Sans", sans-serif;
-  background-color: #e3cf5b;
-}
-
-#logout-button:hover {
-  background-color: #4f3222;
-}
-
-#profile-uploader-container {
-  margin: 0 0 0 105px;
-  padding: 3px;
+.signout {
+  width: 150px;
 }

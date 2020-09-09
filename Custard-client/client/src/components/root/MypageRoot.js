@@ -1,12 +1,10 @@
-import React, { Component } from "react";
+import React from "react";
 import Mypage from "../../containers/Mypage";
 
-export default class MypageRoot extends Component {
-  render() {
-    return (
-      <div>
-        <Mypage></Mypage>
-      </div>
-    );
-  }
+export default function MypageRoot({ isLogin, handleSignout }) {
+  return (
+    <div>
+      <Mypage isLogin={isLogin} handleSignout={handleSignout} />
+    </div>
+  );
 }

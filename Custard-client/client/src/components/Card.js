@@ -133,7 +133,7 @@ class Card extends Component {
                 console.log(cardIdArr);
               });
               return cate.category === cate_route &&
-              childDeck.id === currentDeckId && //? (
+                childDeck.id === currentDeckId && //? (
                 childDeck.title === title ? ( //&&
                 /*childDeck.id === card.deck_id*/
                 //<div key={childDeck.title}>
@@ -307,7 +307,7 @@ class Card extends Component {
                               rows="5"
                               value={values.answer}
                               onChange={(e) => {
-                                if (e.ctrlKey && e.shiftKey && e.which == 83) {
+                                if (e.ctrlKey && e.shiftKey && e.which === 83) {
                                   this.handleAnswerInputKeyUp(idx, e);
                                 }
                                 handleChange(e);
@@ -330,7 +330,7 @@ class Card extends Component {
                                 this.handleStopEditing();
                               }}
                               onKeyUp={(e) => {
-                                if (e.ctrlKey && e.shiftKey && e.which == 83) {
+                                if (e.ctrlKey && e.shiftKey && e.which === 83) {
                                   this.handleAnswerInputKeyUp(idx, e);
                                   handleChange(e);
                                   console.log(e.target.value);

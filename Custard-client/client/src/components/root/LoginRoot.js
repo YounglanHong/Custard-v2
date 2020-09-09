@@ -1,12 +1,10 @@
-import React, { Component } from "react";
+import React from "react";
 import Login from "../../containers/Login";
 
-export default class LoginRoot extends Component {
-  render() {
-    return (
-      <div>
-        <Login></Login>
-      </div>
-    );
-  }
+export default function LoginRoot({ isLogin, handleLogin }) {
+  return (
+    <div>
+      <Login isLogin={isLogin} handleLogin={handleLogin} />
+    </div>
+  );
 }

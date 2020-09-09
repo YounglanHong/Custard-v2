@@ -33,8 +33,6 @@ export default function AddCardType(props) {
           {cardtype} &nbsp;
           <ArrowDropDownIcon />
         </Button>
-        {/* 버튼 클릭 시 모달창(anchorEl가 true일 때는 open, false 일 때는
-        close) */}
         <Menu
           id="simple-menu"
           anchorEl={anchorEl}

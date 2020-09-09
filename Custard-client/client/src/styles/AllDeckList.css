@@ -1,8 +1,8 @@
-.deck-list {
+.AllDeckList {
   width: 600px;
   margin: 0 0 0 250px;
   background-color: #ece3a9;
-  padding-top: 20px;
+  padding: 50px;
   border-radius: 5px;
 }
 

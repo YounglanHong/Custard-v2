@@ -46,10 +46,10 @@ export default class Study extends Component {
 
     //? decks => category[i].Decks
     let currentDeckId = 0;
-    let currentDeck = "";
     let deckTitle = "";
     for (let i = 0; i < category.length; i++) {
       for (let j = 0; j < category[i].Decks.length; j++) {
+        let currentDeck = "";
         if (category[i].Decks[j].title === title) {
           currentDeckId = category[i].Decks[j].id;
           currentDeck = category[i].Decks[j].title;
@@ -58,8 +58,6 @@ export default class Study extends Component {
       }
     }
     const cardIdArr = [];
-    //console.log(cards);
-    //console.log(currentDeckId);
 
     for (let i = 0; i < cards.length; i++) {
       console.log(typeof cards[i]["deck_id"]);

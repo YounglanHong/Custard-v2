@@ -5,7 +5,6 @@ import SpeedDialIcon from "@material-ui/lab/SpeedDialIcon";
 import SpeedDialAction from "@material-ui/lab/SpeedDialAction";
 import { ThemeProvider } from "@material-ui/styles";
 import { createMuiTheme } from "@material-ui/core/styles";
-// import { grey } from "@material-ui/core/colors";
 
 //* material-UI style object
 const theme = createMuiTheme({

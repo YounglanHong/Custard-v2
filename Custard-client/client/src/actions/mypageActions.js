@@ -32,7 +32,6 @@ export function register(newUser) {
   };
 }
 
-// ! 작동하는 함수
 export function login(user) {
   return (dispatch) => {
     axios

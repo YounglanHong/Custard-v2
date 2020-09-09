@@ -10,8 +10,6 @@ export default function CardType(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [cardtype, setCardType] = React.useState("Card Type");
 
-  console.log(cardtype);
-
   const handleClick = (e) => {
     setAnchorEl(e.currentTarget);
   };
@@ -23,18 +21,10 @@ export default function CardType(props) {
   };
 
   //? Card > CardType props
-  //! cardtype만 바뀌어도 question, answer, hint 함께 서버에 patch/post 요청 보내는 문제
   return (
     <div>
-      {/*console.log(props.values.cardtype)*/}
       <div className="card_type">
-        {/* Card Type &nbsp; */}
-        <Button
-          //   aria-controls="simple-menu"
-          //   aria-haspopup="true"
-          onClick={handleClick}
-          variant="outlined"
-        >
+        <Button onClick={handleClick} variant="outlined">
           {props.values.cardtype}&nbsp;
           <ArrowDropDownIcon />
         </Button>

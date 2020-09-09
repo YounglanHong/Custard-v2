@@ -18,58 +18,7 @@ import {
   DELETE_CATEGORY,
   formatTimestamp,
 } from "../actions/allDeckListActions.js";
-// import { CardActions } from "@material-ui/core";
 
-// const initialState = {
-//   decks: [
-//     {
-//       category: "English",
-//       decks: [
-//         {
-//           user_id: 1,
-//           id: 5,
-//           title: "Netflix - Rick and Morty",
-//           author: "Min",
-//           isEditing: false,
-//           created_at: "2020-03-05",
-//           last_updated_at: "2020-03-06",
-//           is_public: true,
-//           is_paid: false,
-//         },
-//         {
-//           user_id: 1,
-//           id: 7,
-//           title: "TOEIC",
-//           author: "Hackers",
-//           isEditing: false,
-//           created_at: "1990-10-19",
-//           last_updated_at: "2006-05-11",
-//           is_public: true,
-//           is_paid: true,
-//         },
-//       ],
-//       isEditing: false,
-//     },
-//     {
-//       category: "French",
-//       decks: [
-//         {
-//           user_id: 1,
-//           id: 3,
-//           title: "DELF",
-//           author: "AF",
-//           isEditing: false,
-//           created_at: "2008-10-10",
-//           last_updated_at: "2008-11-31",
-//           is_public: true,
-//           is_paid: true,
-//         },
-//       ],
-//       isEditing: false,
-//     },
-//   ],
-//   action: "",
-// };
 const initialState = {
   category: [
     {
@@ -127,11 +76,6 @@ const initialState = {
   ],
 };
 
-//* 액션을 만들어 발생시키면 리듀서가 현재 상태와 전달 받은 액션 객체를 파라미터로 받아온다.
-//* 두 값을 참고하여 새로운 상태를 만들어 반환해 준다.
-
-//* case에 따라 변화가 생긴다.
-//! UPDATE_USER_DECKS는 사실상 UPDATE_USER_CATEGORY
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     //* 카테고리 변경 사항 적용
