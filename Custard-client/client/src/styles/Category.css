@@ -1,0 +1,40 @@
+.Category {
+  width: 600px;
+  margin: 0 0 0 250px;
+  background-color: #ece3a9;
+  padding: 50px;
+  border-radius: 5px;
+}
+
+.category-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0px 10px 5px 0px;
+  color: rgb(73, 73, 73);
+  cursor: pointer;
+  font-size: 15pt;
+  font-weight: 500;
+}
+
+.category-list:hover {
+  color: black;
+}
+
+.addCategory-button {
+  position: relative;
+  /* left: 65vw; */
+}
+
+.addCategory-icon {
+  /* width: 100px;
+  height: 100px; */
+}
+
+.addCategory-input {
+  color: rgb(155, 152, 152);
+}
+
+.addCategory-input:focus {
+  outline: none;
+}

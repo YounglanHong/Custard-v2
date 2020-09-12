@@ -5,9 +5,9 @@ import { connect } from "react-redux";
 import "./App.css";
 import MypageRoot from "./components/root/MypageRoot";
 import LoginRoot from "./components/root/LoginRoot";
-import Study from "./containers/Study";
-import AllDeckList from "./containers/AllDeckList";
+import Category from "./components/Category";
 import Deck from "./containers/Deck";
+import Study from "./containers/Study";
 import AddCard from "./containers/AddCard";
 import Signup from "./containers/Signup";
 import Score from "./containers/Score";
@@ -139,7 +139,7 @@ class App extends Component {
                 path="/decks"
                 render={() => {
                   if (isLogin) {
-                    return <AllDeckList />;
+                    return <Category />;
                   } else {
                     return <Redirect to="/mypage" />;
                   }
