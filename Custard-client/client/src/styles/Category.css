@@ -10,23 +10,48 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin: 0px 10px 5px 0px;
+}
+
+.category-list:hover .category-list-icons {
+  display: block;
+  margin-left: 23vw;
+}
+
+.category-list-item {
   color: rgb(73, 73, 73);
   cursor: pointer;
+  font-size: 14pt;
+}
+
+.category-list-item:hover {
+  color: black;
   font-size: 15pt;
   font-weight: 500;
 }
 
-.category-list:hover {
-  color: black;
+.category-list-icons {
+  display: none;
+}
+
+.editCategory-input:focus {
+  outline: none;
+}
+
+/* Press Enter */
+.editCategory-notice {
+  font-style: italic;
+  font-size: 9pt;
+  color: grey;
+  margin-left: 10px;
 }
 
 .addCategory-button {
-  position: relative;
-  /* left: 65vw; */
+  /* position: relative; */
 }
 
 .addCategory-icon {
+  display: flex;
+  justify-content: flex-end;
   /* width: 100px;
   height: 100px; */
 }
