@@ -1,0 +1,53 @@
+.deck-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  list-style: none;
+}
+
+.deck-list:hover .deck-list-icons {
+  display: block;
+  margin-left: 10vw;
+}
+
+.deck-list-icons {
+  display: none;
+}
+
+.editDeck-input:focus {
+  outline: none;
+}
+
+/* Press Enter */
+.editDeck-notice {
+  font-style: italic;
+  font-size: 8pt;
+  color: grey;
+  margin-left: 10px;
+}
+
+.addDeck-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.deckForm-button {
+  font-size: 10pt;
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.addDeck-input:focus {
+  outline: none;
+}
+
+.deck-container {
+  margin-bottom: 15px;
+}
+
+.addDeck-button {
+  position: fixed;
+  left: 132px;
+}

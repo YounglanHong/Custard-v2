@@ -1,11 +1,9 @@
-import React, { useState, useEffect, createRef } from "react";
+import React, { useState, useEffect } from "react";
 import { Formik, Form, Field } from "formik";
 
 import Decks from "./Decks";
-// import TextField from "@material-ui/core/TextField";
-import IconButton from "@material-ui/core/IconButton";
-import Typography from "@material-ui/core/Typography";
 
+import IconButton from "@material-ui/core/IconButton";
 import DeleteIcon from "@material-ui/icons/Delete";
 import AddIcon from "@material-ui/icons/Add";
 import EditIcon from "@material-ui/icons/Edit";
@@ -22,8 +20,8 @@ import database from "../firebase";
 import "../styles/Category.css";
 
 export default function Category() {
-  let [editingCategory, setEditingCategory] = useState(false);
   let [categories, setCategories] = useState([]);
+  let [editingCategory, setEditingCategory] = useState(false); //* 카테고리 수정 상태
   let [index, setIndex] = useState(0); //* 특정 카테고리 수정 시 index
   let [value, setValue] = useState(""); //* 특정 카테고리 수정 시 inputText
 
@@ -101,6 +99,7 @@ export default function Category() {
   //* 카테고리 map 함수
   // w/ 카테고리 리스트 & 수정, 삭제 버튼
   function categoryMap() {
+    // category[0]: categoryKey, category[1]: categoryTitle
     return categories.map((category, i) => {
       return (
         <TreeItem
@@ -140,7 +139,7 @@ export default function Category() {
             </div>
           }
         >
-          <Decks category={category[1]} />
+          <Decks category={category[1]} categoryKey={category[0]} />
         </TreeItem>
       );
     });
@@ -148,7 +147,7 @@ export default function Category() {
 
   //* Formik props
   const initialValues = {
-    category: "category name",
+    category: "",
   };
 
   const onSubmit = (values, actions) => {
@@ -175,8 +174,13 @@ export default function Category() {
       <div className="addCategory">
         <Formik initialValues={initialValues} onSubmit={onSubmit}>
           <Form className="addCategory-form">
-            <Field type="text" className="addCategory-input" name="category" />
-            <Tooltip title="add" placement="bottom">
+            <Field
+              type="text"
+              className="addCategory-input"
+              name="category"
+              placeholder="category name"
+            />
+            <Tooltip title="add category" placement="bottom">
               <IconButton type="submit">
                 <AddIcon style={{ fontSize: "13pt" }} />
               </IconButton>
@@ -187,4 +191,3 @@ export default function Category() {
     </div>
   );
 }
-// }
