@@ -53,8 +53,6 @@
 .addCategory-icon {
   display: flex;
   justify-content: flex-end;
-  /* width: 100px;
-  height: 100px; */
 }
 
 .addCategory-input {

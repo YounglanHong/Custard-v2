@@ -7,8 +7,8 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import AddIcon from "@material-ui/icons/Add";
 import EditIcon from "@material-ui/icons/Edit";
 import Tooltip from "@material-ui/core/Tooltip";
-import AddBoxTwoToneIcon from "@material-ui/icons/AddBoxTwoTone";
-import IndeterminateCheckBoxTwoToneIcon from "@material-ui/icons/IndeterminateCheckBoxTwoTone";
+
+import DeckField from "./field/DeckField";
 
 import database from "../firebase";
 
@@ -104,21 +104,28 @@ export default function Decks({ category, categoryKey }) {
     return (
       <ul className="deck-lists">
         {deckList.map((deck, i) => {
+          let deckKey = deck[0];
+          let deckTitle = deck[1];
           return (
             <li key={i} className="deck-list">
               {editingDeck && i === index ? (
                 <>
                   <input
                     className="editDeck-input"
-                    placeholder={deck[1]}
+                    placeholder={deckTitle}
                     value={value}
                     onChange={handleEditInput}
-                    onKeyUp={() => editDeck(deck[0], category)}
+                    onKeyUp={() => editDeck(deckKey, category)}
                   />
                   <span className="editDeck-notice">Press Enter</span>
                 </>
               ) : (
-                <span className="deck-list-item">{deck[1]}</span>
+                <Link
+                  className="deck-list-link"
+                  to={`/deck/${category}/${deckTitle}`}
+                >
+                  <span className="deck-list-item">{deckTitle}</span>
+                </Link>
               )}
               <span className="deck-list-icons">
                 <Tooltip title="edit" placement="top">
@@ -129,7 +136,7 @@ export default function Decks({ category, categoryKey }) {
                 <Tooltip title="delete" placement="top">
                   <IconButton
                     type="submit"
-                    onClick={() => deleteDeck(deck[0], category)}
+                    onClick={() => deleteDeck(deckKey, category)}
                   >
                     <DeleteIcon style={{ fontSize: "12pt" }} />
                   </IconButton>
@@ -169,24 +176,7 @@ export default function Decks({ category, categoryKey }) {
             <div>
               {decks &&
                 decks.map((deck, j) => (
-                  <div key={j} className="addDeck-container">
-                    <Field
-                      name={`decks[${j}]`}
-                      className="addDeck-input"
-                      placeholder="deck name"
-                    />
-                    <AddBoxTwoToneIcon
-                      onClick={() => push("")}
-                      className="deckForm-button"
-                      style={{ fontSize: "13pt", marginLeft: "10px" }}
-                    />
-
-                    <IndeterminateCheckBoxTwoToneIcon
-                      onClick={() => remove(j)}
-                      className="deckForm-button"
-                      style={{ fontSize: "13pt" }}
-                    />
-                  </div>
+                  <DeckField j={j} push={push} remove={remove} />
                 ))}
             </div>
           );
@@ -201,6 +191,7 @@ export default function Decks({ category, categoryKey }) {
       <Formik initialValues={initialValues} onSubmit={onSubmit}>
         <Form>
           {addDecksMap()}
+
           {/* //* 덱 추가 */}
           <Tooltip title="add deck" placement="bottom">
             <IconButton type="submit" className="addDeck-button">

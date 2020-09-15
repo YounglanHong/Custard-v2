@@ -101,25 +101,27 @@ export default function Category() {
   function categoryMap() {
     // category[0]: categoryKey, category[1]: categoryTitle
     return categories.map((category, i) => {
+      let categoryKey = category[0];
+      let categoryTitle = category[1];
       return (
         <TreeItem
           key={i}
-          nodeId={category[0]}
+          nodeId={categoryKey}
           label={
             <div className="category-list">
               {editingCategory && i === index ? (
                 <>
                   <input
                     className="editCategory-input"
-                    placeholder={category[1]}
+                    placeholder={categoryTitle}
                     value={value}
                     onChange={handleEditInput}
-                    onKeyUp={() => editCategory(category[0])}
+                    onKeyUp={() => editCategory(categoryKey)}
                   />
                   <span className="editCategory-notice">Press Enter</span>
                 </>
               ) : (
-                <span className="category-list-item">{category[1]}</span>
+                <span className="category-list-item">{categoryTitle}</span>
               )}
               <span className="category-list-icons">
                 <Tooltip title="edit" placement="top">
@@ -130,7 +132,7 @@ export default function Category() {
                 <Tooltip title="delete" placement="top">
                   <IconButton
                     type="submit"
-                    onClick={() => deleteCategory(category[0])}
+                    onClick={() => deleteCategory(categoryKey)}
                   >
                     <DeleteIcon style={{ fontSize: "14pt" }} />
                   </IconButton>
@@ -139,7 +141,7 @@ export default function Category() {
             </div>
           }
         >
-          <Decks category={category[1]} categoryKey={category[0]} />
+          <Decks category={categoryTitle} categoryKey={categoryKey} />
         </TreeItem>
       );
     });

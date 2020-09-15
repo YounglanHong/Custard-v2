@@ -26,6 +26,15 @@
   margin-left: 10px;
 }
 
+.deck-list-link {
+  text-decoration: none;
+  color: rgb(99, 99, 99);
+}
+
+.deck-list-link:hover {
+  color: black;
+}
+
 .addDeck-container {
   display: flex;
   flex-direction: row;
@@ -44,7 +53,7 @@
 }
 
 .deck-container {
-  margin-bottom: 15px;
+  margin: 10px 0px 15px 0px;
 }
 
 .addDeck-button {
