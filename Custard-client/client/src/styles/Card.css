@@ -1,22 +1,20 @@
-#card {
-  margin: 0 0 0 250px;
+#Card {
+  margin: 0 0 0 300px;
   max-width: 600px;
 }
 .card_container {
-  /* width: 300px; */
   margin: 10px;
-  padding: 10px;
+  padding: 15px;
   border-radius: 3px;
   background-color: rgb(233, 202, 161);
 }
 .card_header {
-  /* border-bottom: 2px solid burlywood; */
-  /* margin: 0px 0px 0px 0px; */
+  display: flex;
+  flex-direction: column;
   padding: 10px 0px 5px 0px;
   border-top: 2px solid rgb(233, 202, 161);
   border-bottom: 2px solid rgb(233, 202, 161);
-  /* border-radius: 3px; */
-  /* background-color: rgb(233, 202, 161); */
+  color: #61493c;
 }
 .card_title {
   margin: 2px;
@@ -40,7 +38,10 @@
   border-bottom: 1px dotted #6d4129;
 }
 .card_content {
-  /* font-family: "Roboto", sans-serif; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
   padding: 20px 0px 5px 0px;
   border-top: 1px dotted #92763a;
   border-bottom: 1px dotted #fcfbe9;
@@ -50,10 +51,38 @@
 .card_cardtype {
   padding: 10px;
 }
-.card_button {
-  top: 35px;
-  float: right;
+.card_buttons {
+  opacity: 0.6;
 }
-.card_dial {
-  position: sticky;
+.card_buttons:hover {
+  opacity: 0.9;
+}
+/* .addCard_button {
+  margin-left: 100px;
+} */
+.addCard_link {
+  text-decoration: none;
+  color: rgb(82, 81, 81);
+}
+
+/* CardField */
+.cardField_heading {
+  color: rgb(82, 81, 81);
+}
+
+.CardField {
+  width: 100%;
+  margin: 10px;
+}
+
+.cardField_text {
+  background-color: #fcfbe9;
+  border-radius: 3px;
+  color: brown;
+  width: 95%;
+  height: 100px;
+}
+
+.cardField_text:focus {
+  outline-color: rgb(136, 136, 136);
 }
