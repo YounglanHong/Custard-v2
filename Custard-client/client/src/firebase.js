@@ -3,15 +3,26 @@ import * as firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/database";
 
+import {
+  API_KEY,
+  AUTH_DOMAIN,
+  DB_URL,
+  PROJECT_ID,
+  STORAGE_BUCKET,
+  SENDER_ID,
+  APP_ID,
+  MEASUREMENT_ID,
+} from "./config/firebase";
+
 const firebaseConfig = {
-  apiKey: "AIzaSyA0pkMBAiF3Ec9AY7qbdLVcqLz84dKkPZE",
-  authDomain: "custard-deploy.firebaseapp.com",
-  databaseURL: "https://custard-deploy.firebaseio.com",
-  projectId: "custard-deploy",
-  storageBucket: "custard-deploy.appspot.com",
-  messagingSenderId: "607815226964",
-  appId: "1:607815226964:web:3c245bfb0ae22bbb213fc1",
-  measurementId: "G-1PF8ZL4YWG",
+  apiKey: API_KEY,
+  authDomain: AUTH_DOMAIN,
+  databaseURL: DB_URL,
+  projectId: PROJECT_ID,
+  storageBucket: STORAGE_BUCKET,
+  messagingSenderId: SENDER_ID,
+  appId: APP_ID,
+  measurementId: MEASUREMENT_ID,
 };
 
 // Initialize Firebase
