@@ -6,11 +6,11 @@ import "../../styles/Decks.css";
 import AddBoxTwoToneIcon from "@material-ui/icons/AddBoxTwoTone";
 import IndeterminateCheckBoxTwoToneIcon from "@material-ui/icons/IndeterminateCheckBoxTwoTone";
 
-export default function DeckField({ j, push, remove }) {
+export default function DeckField({ index, push, remove }) {
   return (
-    <div key={j} className="addDeck-container">
+    <div key={index} className="addDeck-container">
       <Field
-        name={`decks[${j}]`}
+        name={`decks[${index}]`}
         className="addDeck-input"
         placeholder="deck name"
       />
@@ -21,7 +21,7 @@ export default function DeckField({ j, push, remove }) {
       />
 
       <IndeterminateCheckBoxTwoToneIcon
-        onClick={() => remove(j)}
+        onClick={() => remove(index)}
         className="deckForm-button"
         style={{ fontSize: "13pt" }}
       />

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Formik, Form, Field, FieldArray } from "formik";
+import { Formik, Form, FieldArray } from "formik";
 
 import IconButton from "@material-ui/core/IconButton";
 import DeleteIcon from "@material-ui/icons/Delete";
@@ -40,7 +40,7 @@ export default function Decks({ category, categoryKey }) {
   //* 덱 등록
   function registerDeck(decks) {
     let deckRef = database.ref("decks").child(category);
-    // 한 개 만 등록 할 때
+    // 한 개만 등록 할 때
     if (decks.length === 1) {
       deckRef
         .push({ decks: decks })
@@ -122,7 +122,7 @@ export default function Decks({ category, categoryKey }) {
               ) : (
                 <Link
                   className="deck-list-link"
-                  to={`/deck/${category}/${deckTitle}`}
+                  to={`/card/${category}/${deckTitle}`}
                 >
                   <span className="deck-list-item">{deckTitle}</span>
                 </Link>
@@ -165,7 +165,7 @@ export default function Decks({ category, categoryKey }) {
     });
   };
 
-  //* 덱 추가(FieldArray)
+  //* 덱 입력창 추가 또는 삭제(FieldArray)
   function addDecksMap() {
     return (
       <FieldArray name="decks">
@@ -175,8 +175,13 @@ export default function Decks({ category, categoryKey }) {
           return (
             <div>
               {decks &&
-                decks.map((deck, j) => (
-                  <DeckField j={j} push={push} remove={remove} />
+                decks.map((deck, index) => (
+                  <DeckField
+                    key={index}
+                    index={index}
+                    push={push}
+                    remove={remove}
+                  />
                 ))}
             </div>
           );
