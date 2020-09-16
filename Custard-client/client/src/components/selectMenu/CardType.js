@@ -36,38 +36,38 @@ export default function CardType(props) {
           onClose={handleClose}
         >
           <MenuItem
-            onClick={(e) => {
-              handleClose(e);
-              props.values.cardtype = e.target.innerText;
-              props.editCardtype(props.values.cardtype, e.target.innerText);
-              props.editCardInServer(
-                props.values.id,
-                props.values.cardtype,
-                props.values.question,
-                props.values.answer,
-                props.values.answer_target,
-                props.values.hint
-              );
-              props.editCard(props.values.id);
-            }}
+          // onClick={(e) => {
+          //   handleClose(e);
+          //   props.values.cardtype = e.target.innerText;
+          //   props.editCardtype(props.values.cardtype, e.target.innerText);
+          //   props.editCardInServer(
+          //     props.values.id,
+          //     props.values.cardtype,
+          //     props.values.question,
+          //     props.values.answer,
+          //     props.values.answer_target,
+          //     props.values.hint
+          //   );
+          //   props.editCard(props.values.id);
+          // }}
           >
             flashcard
           </MenuItem>
           <MenuItem
-            onClick={(e) => {
-              handleClose(e);
-              props.values.cardtype = e.target.innerText;
-              props.editCardtype(props.values.cardtype, e.target.innerText);
-              props.editCardInServer(
-                props.values.id,
-                props.values.cardtype,
-                props.values.question,
-                props.values.answer,
-                props.values.answer_target,
-                props.values.hint
-              );
-              props.editCard(props.values.id);
-            }}
+          // onClick={(e) => {
+          //   handleClose(e);
+          //   props.values.cardtype = e.target.innerText;
+          //   props.editCardtype(props.values.cardtype, e.target.innerText);
+          //   props.editCardInServer(
+          //     props.values.id,
+          //     props.values.cardtype,
+          //     props.values.question,
+          //     props.values.answer,
+          //     props.values.answer_target,
+          //     props.values.hint
+          //   );
+          //   props.editCard(props.values.id);
+          // }}
           >
             fill-in-the-blank
           </MenuItem>
