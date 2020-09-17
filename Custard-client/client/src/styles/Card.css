@@ -3,6 +3,8 @@
   max-width: 600px;
 }
 .card_container {
+  display: flex;
+  flex-direction: column;
   margin: 10px;
   padding: 15px;
   border-radius: 3px;
@@ -12,56 +14,52 @@
   display: flex;
   flex-direction: column;
   padding: 10px 0px 5px 0px;
-  border-top: 2px solid rgb(233, 202, 161);
-  border-bottom: 2px solid rgb(233, 202, 161);
   color: #61493c;
 }
-.card_title {
-  margin: 2px;
-  padding: 2px;
-  color: #61493c;
-  font-weight: bold;
-}
-.card_study {
-  text-align: right;
-}
+
 #card_study_button {
   border-radius: 5px;
-  background-color: #9c694d;
-  color: white;
-  font-weight: bold;
-  text-transform: none;
+  background-color: #be815f;
+  color: #fcfbe9;
+  /* text-transform: none; */
   text-decoration: none;
-  float: top;
 }
-.card_cardtype_button {
-  border-bottom: 1px dotted #6d4129;
-}
-.card_content {
+
+.card_cardtype {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 0px 5px 0px;
-  border-top: 1px dotted #92763a;
+  padding: 20px 0px 10px 0px;
   border-bottom: 1px dotted #fcfbe9;
   font-weight: bold;
   color: #94664d;
 }
-.card_cardtype {
-  padding: 10px;
+
+.card_text {
+  margin-bottom: 10px;
+  border-bottom: 1px dotted #92763a;
 }
 .card_buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 20px;
   opacity: 0.6;
 }
 .card_buttons:hover {
   opacity: 0.9;
 }
-/* .addCard_button {
-  margin-left: 100px;
-} */
-.addCard_link {
+
+.registerCard_button {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px 0px 10px 0px;
+}
+
+.registerCard_link {
   text-decoration: none;
+  /* text-transform: none; */
   color: rgb(82, 81, 81);
 }
 
@@ -75,14 +73,25 @@
   margin: 10px;
 }
 
-.cardField_text {
-  background-color: #fcfbe9;
-  border-radius: 3px;
-  color: brown;
-  width: 95%;
+.cardField_input_editing {
+  width: 90%;
   height: 100px;
+  padding: 10px;
+  font-size: 12pt;
+  border-radius: 3px;
+  background-color: #fcfbe9;
 }
 
-.cardField_text:focus {
+.cardField_input {
+  width: 90%;
+  height: 100px;
+  padding: 10px;
+  font-size: 12pt;
+  color: #8d8886;
+  border-radius: 3px;
+  background-color: #fcfbe9;
+}
+
+.cardField_input_editing:focus {
   outline-color: rgb(136, 136, 136);
 }

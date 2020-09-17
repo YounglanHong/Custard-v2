@@ -1,33 +1,35 @@
-.add_card {
+.PlainText {
   margin: 0 0 0 250px;
-  border: 1px solid grey;
-  padding: 5px;
-  width: 600px;
 }
 
-.add_card div {
-  border: transparent;
-  padding: 5px;
-  margin: 0px;
+.addCardField_container {
+  margin-top: 10px;
+  padding: 20px;
+  border-radius: 0.2em;
+  background-color: rgb(241, 241, 241);
 }
 
-.answer-count {
-  float: right;
-  color: grey;
+.addCardField_select {
+  font-family: "Roboto", sans-serif;
+  font-size: 10pt;
+  padding: 1px;
 }
 
-.addQuestion div {
-  margin-right: 10px;
+.addCardField_select:focus {
+  outline: none;
 }
 
-.addAnswer div {
-  margin-right: 10px;
+.addCardField_button {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  opacity: 0.5;
+  cursor: pointer;
+  margin: 10px 20px 10px 0px;
 }
 
-.addNote div {
-  margin-right: 10px;
-}
-
-.MuiInput-underline div {
-  display: none;
+.addCardField_submit {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0px 30px 0px;
 }

@@ -51,20 +51,23 @@ export default function PlainText({ category, deck, registerCard }) {
                   <AddCardField index={index} name="Question" />
                   <AddCardField index={index} name="Answer" />
                   <AddCardField index={index} name="Hint" />
-                  <AddBoxTwoToneIcon
-                    onClick={() => push(formInputs)}
-                    className="addCardField_button"
-                  />
-                  <IndeterminateCheckBoxTwoToneIcon
-                    onClick={() => remove(index)}
-                    className="addCardField_button"
-                  />
+
+                  <div className="addCardField_button">
+                    <AddBoxTwoToneIcon
+                      onClick={() => push(formInputs)}
+                      style={{ marginRight: "5px" }}
+                    />
+                    <IndeterminateCheckBoxTwoToneIcon
+                      onClick={() => remove(index)}
+                      // className="addCardField_button"
+                    />
+                  </div>
                 </div>
               ));
             }}
           </FieldArray>
           <div className="addCardField_submit">
-            <Button type="submit" variant="outlined">
+            <Button type="submit" variant="contained" fullWidth>
               Add Card
             </Button>
           </div>

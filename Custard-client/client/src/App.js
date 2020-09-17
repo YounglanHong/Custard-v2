@@ -6,11 +6,11 @@ import "./App.css";
 import MypageRoot from "./components/root/MypageRoot";
 import LoginRoot from "./components/root/LoginRoot";
 import Category from "./components/Category";
-import Deck from "./containers/Deck";
-import Study from "./containers/Study";
-import AddCard from "./containers/AddCard";
-import Signup from "./containers/Signup";
-import Score from "./containers/Score";
+import Deck from "./components/root/Deck";
+import Study from "./components/Study";
+import AddCard from "./components/AddCard";
+import Signup from "./components/Signup";
+import Score from "./components/Score";
 
 import { updateUserInfo } from "./actions/mypageActions";
 
@@ -52,10 +52,6 @@ class App extends Component {
     });
   }
 
-  componentDidMount() {
-    this.props.updateUserInfo();
-  }
-
   handleLogin() {
     this.setState({ isLogin: true });
   }
@@ -65,13 +61,11 @@ class App extends Component {
   }
 
   render() {
-    // const { isLogin } = this.props;
     const { isLogin } = this.state;
     const { handleLogin, handleSignout } = this;
 
     return (
       <div>
-        {/* 로그인 상태에 따라 로고 이미지 변화 */}
         <div id="login-logo-container">
           <img
             alt="login-logo"
@@ -128,7 +122,6 @@ class App extends Component {
               <Route
                 exact
                 path="/login"
-                // component={LoginRoot}
                 render={() => (
                   <LoginRoot isLogin={isLogin} handleLogin={handleLogin} />
                 )}
@@ -174,56 +167,19 @@ class App extends Component {
                   }
                 }}
               />
-              {/* //? category => cate_route */}
+
+              <Route exact path="/card/:category/:deck" component={Deck} />
               <Route
                 exact
-                // path="/deck"
-                path="/deck/:cate_route/:title" //<-"/deck:title" //TODO: match.params.title
-                component={Deck}
-                render={() => {
-                  if (isLogin) {
-                    return <Deck />;
-                  } else {
-                    return <Deck />;
-                  }
-                }}
-              />
-              <Route
-                exact
-                path="/addCard/:cate_route/:title" //!어떤 deek에 카드를 추가하는지 알 수 있도록 router 추가했어요
+                path="/addCard/:category/:deck"
                 component={AddCard}
-                render={() => {
-                  if (isLogin) {
-                    return <AddCard />;
-                  } else {
-                    return <AddCard />;
-                  }
-                }}
               />
               <Route
                 exact
-                path="/study/:cate_route/:title/:cardId" //TODO: url에 :cardId 이런식으로 들어가려면 각 카드에 id가 있어야하긴 하겠네요 ㅠ
+                path="/study/:category/:deck/:cardId"
                 component={Study}
-                render={() => {
-                  if (isLogin) {
-                    return <Study />;
-                  } else {
-                    return <Study />;
-                  }
-                }}
               />
-              <Route
-                exact
-                path="/score/:cate_route/:title" //TODO: url에 :cardId 이런식으로 들어가려면 각 카드에 id가 있어야하긴 하겠네요 ㅠ
-                component={Score}
-                render={() => {
-                  if (isLogin) {
-                    return <Score />;
-                  } else {
-                    return <Score />;
-                  }
-                }}
-              />
+              <Route exact path="/score/:category/:deck" component={Score} />
             </Switch>
           </div>
         </div>
