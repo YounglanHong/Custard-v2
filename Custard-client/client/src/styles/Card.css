@@ -92,6 +92,23 @@
   background-color: #fcfbe9;
 }
 
+.cardField_notice {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 15px;
+  color: #8d8886;
+  font-size: 10pt;
+  font-style: italic;
+}
+
+.cardField_input:focus .cardField_notice {
+  display: none;
+}
+
 .cardField_input_editing:focus {
   outline-color: rgb(136, 136, 136);
+}
+
+.cardField_select:focus {
+  outline: none;
 }

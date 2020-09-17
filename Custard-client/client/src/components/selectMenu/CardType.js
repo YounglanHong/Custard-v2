@@ -1,78 +1,19 @@
 import React from "react";
+import { Field } from "formik";
 
-import Button from "@material-ui/core/Button";
-import Menu from "@material-ui/core/Menu";
-import MenuItem from "@material-ui/core/MenuItem";
-import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
-
-export default function CardType(props) {
+export default function CardType({ index }) {
   //* Card - card type
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const [cardtype, setCardType] = React.useState("Card Type");
+  // FIX: Modify from material-ui Menu to Formik Field select
 
-  const handleClick = (e) => {
-    setAnchorEl(e.currentTarget);
-  };
-
-  const handleClose = (e) => {
-    props.handleCardType(e.target.innerText);
-    setAnchorEl(null);
-    setCardType(e.target.innerText);
-  };
-
-  //? Card > CardType props
   return (
-    <div>
-      <div className="card_type">
-        <Button onClick={handleClick} variant="outlined">
-          {props.values.cardtype}&nbsp;
-          <ArrowDropDownIcon />
-        </Button>
-        <Menu
-          id="simple-menu"
-          anchorEl={anchorEl}
-          keepMounted
-          open={Boolean(anchorEl)}
-          onClose={handleClose}
-        >
-          <MenuItem
-          // onClick={(e) => {
-          //   handleClose(e);
-          //   props.values.cardtype = e.target.innerText;
-          //   props.editCardtype(props.values.cardtype, e.target.innerText);
-          //   props.editCardInServer(
-          //     props.values.id,
-          //     props.values.cardtype,
-          //     props.values.question,
-          //     props.values.answer,
-          //     props.values.answer_target,
-          //     props.values.hint
-          //   );
-          //   props.editCard(props.values.id);
-          // }}
-          >
-            flashcard
-          </MenuItem>
-          <MenuItem
-          // onClick={(e) => {
-          //   handleClose(e);
-          //   props.values.cardtype = e.target.innerText;
-          //   props.editCardtype(props.values.cardtype, e.target.innerText);
-          //   props.editCardInServer(
-          //     props.values.id,
-          //     props.values.cardtype,
-          //     props.values.question,
-          //     props.values.answer,
-          //     props.values.answer_target,
-          //     props.values.hint
-          //   );
-          //   props.editCard(props.values.id);
-          // }}
-          >
-            fill-in-the-blank
-          </MenuItem>
-        </Menu>
-      </div>
-    </div>
+    <Field
+      as="select"
+      name={`cardForm[${index}]["cardType"]`}
+      className="cardField_select"
+    >
+      <option value="">SELECT CARDTYPE</option>
+      <option value="Flashcard">Flashcard</option>
+      <option value="FillInTheBlanks">Fill-in-the-blanks</option>
+    </Field>
   );
 }

@@ -17,7 +17,7 @@ import database from "../firebase";
 export default function Card({ categoryTitle, deckTitle }) {
   let [cardLists, setCardLists] = useState([]);
   let [isEditing, setIsEditing] = useState(false);
-  let [index, setIndex] = useState(0); //* 특정 카드 입력창 수정 시 index
+  let [targetIndex, setTargetIndex] = useState(0); //* 특정 카드 입력창 수정 시 index
   let [value, setValue] = useState(""); //* 특정 카드 입력창 수정 시 inputText
 
   const formInputs = {
@@ -47,24 +47,22 @@ export default function Card({ categoryTitle, deckTitle }) {
 
   //* 카드 수정
   function startEditing(index) {
-    setIndex(index);
+    setTargetIndex(index); //* 수정하려는 카드 index 저장
     setIsEditing(true);
   }
 
-  function editCard(key /* categoryTitle, deckTitle */) {
+  function editCard(key, value) {
     let cardRef = database
       .ref("cards")
       .child(categoryTitle)
       .child(deckTitle)
       .child(key);
 
-    if (window.event.keyCode === 13) {
-      cardRef.update({ cards: value }).then(() => {
-        setIsEditing(false); // 수정 완료
-        setValue(""); // 입력창 초기화
-      });
-      getCard(); // 변경사항 호출
-    }
+    cardRef.update({ cards: value }).then(() => {
+      setIsEditing(false); // 수정 완료
+      setValue(""); // 입력창 초기화
+    });
+    getCard(); // 변경사항 호출
   }
 
   //* 카드 삭제
@@ -85,9 +83,10 @@ export default function Card({ categoryTitle, deckTitle }) {
     cardForm: cardForm,
   };
 
-  const onSubmit = (values, actions) => {
-    console.log(values);
-  };
+  // const onSubmit = (values, actions) => {
+  //   // editCard(values.cardForm);
+  //   console.log(values);
+  // };
 
   return (
     <div id="Card">
@@ -109,48 +108,52 @@ export default function Card({ categoryTitle, deckTitle }) {
             <Formik
               key={cardKey}
               initialValues={initialValues}
-              onSubmit={onSubmit}
+              onSubmit={(values) => editCard(cardKey, values.cardForm[index])}
             >
               <Form className="card_text">
                 <div className="card_cardtype">
-                  <span>{cardType}</span>
+                  {isEditing ? (
+                    <CardType index={index} />
+                  ) : (
+                    <span>{cardType}</span>
+                  )}
                 </div>
                 <CardField
                   index={index}
                   item="Question"
                   isEditing={isEditing}
                   startEditing={startEditing}
-                  editCard={editCard}
                   value={Question}
-                  cardKey={cardKey}
+                  targetIndex={targetIndex}
                 />
                 <CardField
                   index={index}
                   item="Answer"
                   isEditing={isEditing}
                   startEditing={startEditing}
-                  editCard={editCard}
                   value={Answer}
-                  cardKey={cardKey}
+                  targetIndex={targetIndex}
                 />
                 <CardField
                   index={index}
                   item="Hint"
                   isEditing={isEditing}
                   startEditing={startEditing}
-                  editCard={editCard}
                   value={Hint}
-                  cardKey={cardKey}
+                  targetIndex={targetIndex}
                 />
                 <div className="card_buttons">
-                  {/* <Button type="submit">
+                  <Button type="submit">
                     <Tooltip title="edit card" placement="left">
                       <EditIcon
-                        style={{ fontSize: "13pt" }}
-                        onClick={() => startEditing(index)}
+                        style={
+                          isEditing
+                            ? { display: "block", fontSize: "13pt" }
+                            : { display: "none" }
+                        }
                       />
                     </Tooltip>
-                  </Button> */}
+                  </Button>
                   <Button>
                     <Tooltip title="delete card" placement="right">
                       <DeleteIcon

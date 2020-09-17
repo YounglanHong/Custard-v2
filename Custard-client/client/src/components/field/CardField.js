@@ -7,10 +7,10 @@ import "../../styles/Card.css";
 export default function CardField({
   cardKey,
   index,
+  targetIndex,
   item,
   isEditing,
   startEditing,
-  editCard,
   value,
 }) {
   return (
@@ -18,26 +18,23 @@ export default function CardField({
       <h4 className="cardField_heading">
         {item}.{index + 1}
       </h4>
-      {isEditing ? (
+      {index === targetIndex && isEditing ? (
+        <Field
+          component="textarea"
+          placeholder={value}
+          className="cardField_input_editing"
+          name={`cardForm[${index}][${item}]`}
+        />
+      ) : (
         <div>
           <Field
             component="textarea"
-            // rows="10"
-            placeholder={value}
-            className="cardField_input_editing"
-            name={`cardForm[${index}][${item}]`}
-            onKeyUp={() => editCard(cardKey)}
+            className="cardField_input"
+            value={value}
+            onFocus={() => startEditing(index)}
           />
-          Press Enter
+          <span className="cardField_notice">Click to Edit</span>
         </div>
-      ) : (
-        <Field
-          component="textarea"
-          // rows="10"
-          className="cardField_input"
-          value={value}
-          onFocus={() => startEditing(index)}
-        />
       )}
     </div>
   );
