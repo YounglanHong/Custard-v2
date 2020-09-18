@@ -147,7 +147,7 @@ export default function MultipleSelect(props) {
             MenuProps={MenuProps}
           >
             {LANG.map(function (name) {
-              console.log(name);
+              // console.log(name);
               return (
                 <MenuItem
                   key={name}

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Button from "@material-ui/core/Button";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
+import Tooltip from "@material-ui/core/Tooltip";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 
 import LLN_logo from "../../images/LLN_logo.png";
@@ -45,15 +46,20 @@ export default function AddFileType({ handleFileTypeChange }) {
           onClose={handleClose}
         >
           <MenuItem onClick={handleClose}>plain text</MenuItem>
-          <MenuItem onClick={handleClose}>table</MenuItem>
-          <MenuItem onClick={handleClose}>
-            json
-            <img
-              alt="LLN-logo/"
-              style={{ marginLeft: "58px", width: "28px", height: "28px" }}
-              src={LLN_logo}
-            />
-          </MenuItem>
+          {/* <MenuItem onClick={handleClose}>table</MenuItem> */}
+          <Tooltip
+            title="Sourced from LLN(Language Learning with Netflix)"
+            placement="right"
+          >
+            <MenuItem onClick={handleClose}>
+              json
+              <img
+                alt="LLN-logo/"
+                style={{ marginLeft: "58px", width: "28px", height: "28px" }}
+                src={LLN_logo}
+              />
+            </MenuItem>
+          </Tooltip>
           <MenuItem onClick={handleClose}>text recognition</MenuItem>
         </Menu>
       </div>

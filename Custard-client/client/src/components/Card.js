@@ -95,7 +95,9 @@ export default function Card({ categoryTitle, deckTitle }) {
           <h3>
             {categoryTitle}: {deckTitle}
           </h3>
-          <Button id="card_study_button">Study</Button>
+          <Button id="card_study_button" disabled>
+            Study
+          </Button>
         </header>
 
         {cardLists.map((cardList, index) => {

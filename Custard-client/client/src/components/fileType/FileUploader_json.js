@@ -1,8 +1,7 @@
-import React from "react";
-// import axios, { post } from "axios";
+import React, { Component } from "react";
 import "../../styles/FileUploader_json.css";
 
-export default class FileUploader_json extends React.Component {
+export default class FileUploader_json extends Component {
   constructor(props) {
     super(props);
     this.handleJSONInput = this.handleJSONInput.bind(this);
@@ -14,32 +13,26 @@ export default class FileUploader_json extends React.Component {
     let file = e.target.files[0];
     let reader = new FileReader();
     reader.onload = () => {
-      console.log("JSON result:", reader.result);
+      // console.log("JSON result:", reader.result);
       let parse = JSON.parse(reader.result); //* File => result object
       this.props.handleJSON(parse);
     };
     reader.readAsText(file);
-    // this.props.handleJSON(reader.result);
   }
 
   render() {
     return (
-      <div /*className="container"*/>
-        <div id="custom-file-input-json-container" /*className="row"*/>
+      <div>
+        <div id="custom-file-input-json-container">
           <form>
-            {/* <h3>JSON File Upload</h3> */}
+            <h3 className="json-heading">JSON File Upload</h3>
+            <div className="json-notice">JSON 형식의 파일을 업로드 하세요</div>
             <input
               className="custom-file-input-json"
               type="file"
               name="jsonData"
               onChange={(e) => this.handleJSONInput(e)}
-              // onChange={this.handleJSONInput}
             />
-            {/* <div>
-              <button type="button" onClick={this.handlePost}>
-                json
-              </button>
-            </div> */}
           </form>
         </div>
       </div>

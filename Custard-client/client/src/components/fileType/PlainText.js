@@ -11,7 +11,8 @@ import AddCardType from "../selectMenu/AddCardType";
 
 import "../../styles/PlainText.css";
 
-export default function PlainText({ category, deck, registerCard }) {
+export default function PlainText({ category, deck, registerCard, cardData }) {
+  console.log("json", cardData);
   const formInputs = {
     cardType: "",
     Question: "",
@@ -26,7 +27,7 @@ export default function PlainText({ category, deck, registerCard }) {
   };
 
   const onSubmit = (values, actions) => {
-    console.log(values);
+    // console.log(values.addCardForm);
     registerCard(values.addCardForm);
     // 입력창 초기화
     actions.resetForm({
@@ -44,24 +45,53 @@ export default function PlainText({ category, deck, registerCard }) {
             {(fieldArrayProps) => {
               const { push, remove, form } = fieldArrayProps;
               const { addCardForm } = form.values;
-              console.log(addCardForm);
               return addCardForm.map((form, index) => (
                 <div key={index} className="addCardField_container">
-                  <AddCardType index={index} />
-                  <AddCardField index={index} name="Question" />
-                  <AddCardField index={index} name="Answer" />
-                  <AddCardField index={index} name="Hint" />
-
-                  <div className="addCardField_button">
-                    <AddBoxTwoToneIcon
-                      onClick={() => push(formInputs)}
-                      style={{ marginRight: "5px" }}
-                    />
-                    <IndeterminateCheckBoxTwoToneIcon
-                      onClick={() => remove(index)}
-                      // className="addCardField_button"
-                    />
-                  </div>
+                  {cardData ? (
+                    cardData.map((data, dataIndex) => {
+                      /* [조건] Plain Text를 제외하고, 데이터 존재하는 경우*/
+                      //TODO: 중복 mapping 해결(cardType)
+                      console.log(data);
+                      return (
+                        <div key={dataIndex}>
+                          <AddCardType index={dataIndex} />
+                          <AddCardField
+                            index={index}
+                            name="Question"
+                            value={data.translation}
+                          />
+                          <AddCardField
+                            index={index}
+                            name="Answer"
+                            value={data.subtitle}
+                          />
+                          <AddCardField
+                            index={index}
+                            name="Hint"
+                            value={data.videoTitle}
+                          />
+                          <hr className="addCardField_divider"></hr>
+                        </div>
+                      );
+                    })
+                  ) : (
+                    /* [조건] Plain Text의 경우(직접 데이터 입력)*/
+                    <div key={index}>
+                      <AddCardType index={index} />
+                      <AddCardField index={index} name="Question" />
+                      <AddCardField index={index} name="Answer" />
+                      <AddCardField index={index} name="Hint" />
+                      <div className="addCardField_button">
+                        <AddBoxTwoToneIcon
+                          onClick={() => push(formInputs)}
+                          style={{ marginRight: "5px" }}
+                        />
+                        <IndeterminateCheckBoxTwoToneIcon
+                          onClick={() => remove(index)}
+                        />
+                      </div>
+                    </div>
+                  )}
                 </div>
               ));
             }}

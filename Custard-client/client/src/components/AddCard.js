@@ -1,14 +1,11 @@
 import React, { useState } from "react";
 import AddFileType from "./selectMenu/AddFileType";
 
-import CSV from "./fileType/FileUploader_csv";
-import Image from "./fileType/FileUploader_image";
+// import CSV from "./fileType/FileUploader_csv";
+// import Image from "./fileType/FileUploader_image";
 import PlainText from "./fileType/PlainText";
 import JSON from "./fileType/FileUploader_json";
 import DetectText from "./fileType/Detect_text_image";
-
-import Button from "@material-ui/core/Button";
-import AddBoxIcon from "@material-ui/icons/AddBox";
 
 import "../styles/AddCard.css";
 
@@ -16,10 +13,23 @@ import database from "../firebase";
 
 export default function AddCard(props) {
   let [fileType, setFileType] = useState("plain text");
+  let [cardData, setCardData] = useState([]);
+
   const { category, deck } = props.match.params;
 
   function handleFileTypeChange(fileType) {
     setFileType(fileType);
+  }
+
+  //* JSON 타입 데이터 처리 함수
+  function handleJSON(jsonData) {
+    setCardData(jsonData);
+  }
+
+  //* OCR 데이터 처리 함수
+  function handleDetect(imageText) {
+    //TODO: OCR 결과값 카드 입력창에 적용
+    console.log(imageText);
   }
 
   //* 카드 등록
@@ -52,31 +62,30 @@ export default function AddCard(props) {
                 />
               </div>
             );
-          case "table":
-            return (
-              <div>
-                {/* <div className="filler"></div>
-                    <CSV
-                      handleCSV={this.handleCSV}
-                      handleTable={this.handleTable}
-                    />
-                    <div className="add-cardform-button">
-                      <AddBoxIcon onClick={this.addCardForm.bind(this)} />
-                    </div> */}
-                <PlainText category={category} deck={deck} />
-              </div>
-            );
+          // case "table":
+          //   return (
+          //     <div>
+          //       {/* <div className="filler"></div>
+          //           <CSV
+          //             handleCSV={this.handleCSV}
+          //             handleTable={this.handleTable}
+          //           />
+          //           <div className="add-cardform-button">
+          //             <AddBoxIcon onClick={this.addCardForm.bind(this)} />
+          //           </div> */}
+          //       <PlainText category={category} deck={deck} />
+          //     </div>
+          //   );
           case "json":
             return (
               <div>
-                {/* <JSON handleJSON={this.handleJSON} />
-                    <span></span>
-                    <br></br>
-                    <AddBoxIcon
-                      id="add-cardform-button-json"
-                      onClick={this.addCardForm.bind(this)}
-                    /> */}
-                <PlainText category={category} deck={deck} />
+                <JSON handleJSON={handleJSON} />
+                <br></br>
+                <PlainText
+                  category={category}
+                  deck={deck}
+                  cardData={cardData}
+                />
               </div>
             );
           case "image":
@@ -92,15 +101,7 @@ export default function AddCard(props) {
           case "text recognition":
             return (
               <div>
-                {/* <div className="filler"></div>
-                <DetectText
-                  handleCSV={this.handleCSV}
-                  handleTable={this.handleTable}
-                  handleDetect={this.handleDetect}
-                />
-                <div className="add-cardform-button">
-                  <AddBoxIcon onClick={this.addCardForm.bind(this)} />
-                </div> */}
+                <DetectText handleDetect={handleDetect} />
                 <PlainText category={category} deck={deck} />
               </div>
             );

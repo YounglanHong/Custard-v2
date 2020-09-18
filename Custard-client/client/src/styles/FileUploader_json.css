@@ -2,6 +2,16 @@
   margin: 5px;
 }
 
+.json-heading {
+  color: grey;
+}
+
+.json-notice {
+  color: grey;
+  font-size: 11pt;
+  font-style: italic;
+}
+
 .custom-file-input-json::-webkit-file-upload-button {
   display: none;
   /* visibility: hidden; */
@@ -38,6 +48,6 @@
   -webkit-user-select: none;
   cursor: pointer;
   font-size: 10pt;
-  width: 60px;
+  width: 52px;
   float: left;
 }

@@ -3,10 +3,15 @@
 }
 
 .addCardField_container {
-  margin-top: 10px;
+  margin-top: 30px;
   padding: 20px;
   border-radius: 0.2em;
   background-color: rgb(241, 241, 241);
+}
+
+.addCardField_divider {
+  border-top: 3px dotted #bbb;
+  margin: 20px 0px 20px 0px;
 }
 
 .addCardField_select {

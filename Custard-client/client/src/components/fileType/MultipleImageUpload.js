@@ -21,7 +21,7 @@ export default class MultipleImageUpload extends Component {
               />
             </div>
             {(this.props.fileArray || []).map((url, i) => (
-              <span>
+              <span key={i}>
                 <input
                   id={`checkbox${i}`}
                   className="checkbox"
