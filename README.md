@@ -39,7 +39,7 @@ npm start
   - Material-ui Treeview 사용하여 안정적인 트리 구조로 개선
 
 * 카테고리, 덱, 카드 페이지 form input(입력창) 개선
-  - <Formik> 라이브러리 사용하여 모든 페이지의 입력창 state 관리
+  - Formik 라이브러리 사용하여 모든 페이지의 입력창 state 관리
 
 * 카드에 추가하는 파일 타입 중 csv(table)은 제외
   - 사용자가 카드 형식에 맞추어 엑셀 파일을 작성해야하는 불편함이 있어서
