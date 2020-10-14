@@ -1,30 +1,21 @@
-# 팀명: Andamiro 🙏
-### 팀 소개
-[Front-End]
-* (팀장) 이민경
-* 홍영란
-
-[Back-End]
-* 김정수
-* 박성용
-
-***
 # 프로젝트명: Custard 🍮
 ![Custard](./Untitled.png) 
 
 ## 프로젝트 정보
 ### 0. 소개
+> Custard (Custom + Flashcard)
+
 미드, 단어장, 전공서적, 신문 기사, 어떤 정보든 나만의 교재로 만드는 커스텀 플래시카드 웹 어플리케이션입니다.
 
-※ 배포 링크 :  http://custard-client.s3-website.ap-northeast-2.amazonaws.com/
+※ 배포 링크 :  https://custard-deploy.web.app/
 
 ### 1. 설치 및 사용 방법
 
 (1) 코드 복사
 
-> 본 레파지토리를 https://github.com/YounglanHong/FinalProject_Custard.git 주소를 활용하여 로컬 환경에 clone 합니다. 
+> 본 레파지토리를 https://github.com/YounglanHong/FinalProject_Deploy.git 주소를 활용하여 로컬 환경에 clone 합니다. 
 ```
-git clone https://github.com/YounglanHong/FinalProject_Custard.git
+git clone https://github.com/YounglanHong/FinalProject_Deploy.git
 ```
 (2) 패키지 설치
 ```
@@ -39,143 +30,32 @@ npm start
 // Custard-server
 npm start
 ```
-### 2. 디렉토리 구조
-* Custard-client
-```
-├── src/
-     └── components/
-     |    ├──  Login/                      
-     |    ├──  Signup/                
-     |    ├──  Mypage/                     
-     |    ├──  AllDeckList/                     
-     |    ├──  Deck/                 
-     |    ├──  Card/                   
-     |    ├──  AddCard/                      
-     |    ├──  Blank/                         
-     |    ├──  Flashcard/                       
-     |    ├──  Study/                   
-     |    ├──  Score/                   
-     |    └── root/       
-     |         ├──  LoginRoot/   
-     |         ├──  SignupRoot/ 
-     |         └──  MypageRoot/    
-     |    └──  selectMenu/               - menu list 기능
-     |    └──  speedDial/                - speed dial 기능
-     |    └──  textType/                 - AddCard에 필요한 함수들
-     |
-     ├── containers/
-     |    ├──  Login/                      
-     |    ├──  Signup/                
-     |    ├──  Mypage/                     
-     |    ├──  AllDeckList/                     
-     |    ├──  Deck/                             
-     |    ├──  AddCard/                      
-     |    ├──  Blank/                         
-     |    ├──  Flashcard/                       
-     |    ├──  Study/                   
-     |    └──  Score/                      
-     |
-     ├── actions/
-     |    ├── allDeckListActions/                
-     |    ├── cardActions/                       
-     |    └── myPageActions/                 
-     |
-     ├── reducers/
-     |    ├── cardReducer/                
-     |    ├── deckReducer/               
-     |    ├── mypageReducer/                           
-     |    └── rootReducer/                 
-     |
-     ├── styles/                     - 주요 component css 파일
-     ├── App                             
-     ├── App.css                          
-     └── index                            
-```
-* Custard-server
-```
-└── controller/
-     └── cards/
-     |    ├──  index/                      
-     |    ├──  card/                
-     |    ├──  hinted/                     
-     |    ├──  marked/                     
-     |    ├──  update_card/                 
-     |    ├──  correct/                             
-     |    └──  wrong/       
-     └── decks/
-     |    ├──  category/                      
-     |    ├──  deck/                
-     |    ├──  index/                     
-     |    ├──  update_cate/                                              
-     |    └──  update_deck/   
-     └── user/
-     |    ├──  index/                      
-     |    ├──  login/                
-     |    ├──  profile/                     
-     |    ├──  signout/                                              
-     |    └──  signup/ 
-     |
-     ├── index/
-     |
-     ├── models/
-     |    ├──  index/   
-     |    ├──  Card/                      
-     |    ├──  Category/                
-     |    ├──  Deck/                     
-     |    ├──  User/                                      
-     |    └──  Like/                      
-     |
-     ├── routes/
-     |    ├── cards/                
-     |    ├── decks/                       
-     |    └── users/                 
-     |                          
-     └── app                          
-```
 
-### 3. 주요 기능 
-* 구글 소셜 로그인 & 프로필 이미지 추가
-<img src="./gif/login.gif"  width="600" height="300">
-
-* category & deck 추가/삭제
-<img src="./gif/category.gif"  width="600" height="300">
-<img src="./gif/deck.gif"  width="600" height="300">
-
-* 텍스트 타입 별 카드 추가
-  - 일반 텍스트 
-   <img src="./gif/addCard(text)2.gif"  width="600" height="300">
+### 2. 주요 변경 사항 
+* firebase 익명 로그인 기능 추가
+  - 사용자가 비회원으로 어플리케이션의 기능을 확인할 수 있도록
   
-  - 표 형식  
-   <img src="./gif/addCard(table).gif"  width="600" height="300">
- 
-  - JSON 형식  
-   <img src="./gif/addCard(json).gif"  width="600" height="300">
- 
-  - 이미지 텍스트 인식  
-   <img src="./gif/addCard(text-detect).gif"  width="600" height="300">
-   <img src="./gif/addCard(text-detect).gif"  width="600" height="300">
-  
-* 카드 학습 & 점수보기  
+* 카테고리 & 덱 페이지 구조 개선
+  - Material-ui Treeview 사용하여 안정적인 트리 구조로 개선
 
-<img src="./gif/study.gif"  width="600" height="300">
+* 카테고리, 덱, 카드 페이지 form input(입력창) 개선
+  - <Formik> 라이브러리 사용하여 모든 페이지의 입력창 state 관리
+
+* 카드에 추가하는 파일 타입 중 csv(table)은 제외
+  - 사용자가 카드 형식에 맞추어 엑셀 파일을 작성해야하는 불편함이 있어서
   
-### 4. 사용 스택
+* 카드에 추가하는 파일 타입 중 OCR(텍스트 인식) 페이지에 로딩바 추가
+  - 사용자가 텍스트 인식의 진행 상황 파악할 수 있도록
+
+
+### 3. 사용 스택
 #### Front-End
-* React & Redux
-* TOAST-UI
+* React & React Hook
 * Tesseract.js
 * Material-UI
 
-#### Back-End
-* Node.js & Express
-* JWT
-* MySQl
-* Sequelize
-
-#### Deployment
-* AWS - S3
-* AWS - EC2
-* AWS - RDS
+#### DB & Deployment
+* firebase 
 
 ***
 
