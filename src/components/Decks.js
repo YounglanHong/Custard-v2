@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { Formik, Form, FieldArray } from "formik";
 
@@ -21,7 +21,7 @@ export default function Decks({ category, categoryKey }) {
   let [value, setValue] = useState(""); //* 특정 덱 수정 시 inputText
 
   //* 덱 정보 가져오기(firebase)
-  function getDeck() {
+  const getDeck = useCallback(() => {
     let deckRef = database.ref("decks").child(category);
     let deckArray = [];
     deckRef.on("value", (snapshot) => {
@@ -31,11 +31,11 @@ export default function Decks({ category, categoryKey }) {
       });
       setDeckList(deckArray);
     });
-  }
+  }, [category]);
 
   useEffect(() => {
     getDeck();
-  }, []);
+  }, [getDeck]);
 
   //* 덱 등록
   function registerDeck(decks) {
