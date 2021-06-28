@@ -13,9 +13,9 @@
 
 (1) 코드 복사
 
-> 본 레파지토리를 https://github.com/YounglanHong/FinalProject_Deploy.git 주소를 활용하여 로컬 환경에 clone 합니다. 
+> 본 레파지토리를 https://github.com/YounglanHong/Custard-v2.git 주소를 활용하여 로컬 환경에 clone 합니다. 
 ```js
-git clone https://github.com/YounglanHong/FinalProject_Deploy.git
+git clone https://github.com/YounglanHong/Custard-v2.git
 ```
 (2) 패키지 설치
 ```js
